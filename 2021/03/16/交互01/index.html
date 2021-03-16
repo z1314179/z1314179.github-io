@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>两个苹果一个人</title>
+  <title>ajax01 | 两个苹果一个人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zhp-blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="两个苹果一个人">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="知识点​    1）CORS解决跨域 ​    2）预检请求 ​    3）利用koa-server-http-proxy实现服务端代理 ​    4）前后分离开发 ​    5）基于jwt鉴权 ​      会使用CORS解决跨域问题  了解后端代理  会使用koa-server-http-proxy中间件实现代理  了解前后端分离工作场景   CORS跨域设置CORS(Cross-origin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax01">
+<meta property="og:url" content="http://example.com/2021/03/16/%E4%BA%A4%E4%BA%9201/index.html">
 <meta property="og:site_name" content="两个苹果一个人">
-<meta property="og:description" content="zhp-blog">
+<meta property="og:description" content="知识点​    1）CORS解决跨域 ​    2）预检请求 ​    3）利用koa-server-http-proxy实现服务端代理 ​    4）前后分离开发 ​    5）基于jwt鉴权 ​      会使用CORS解决跨域问题  了解后端代理  会使用koa-server-http-proxy中间件实现代理  了解前后端分离工作场景   CORS跨域设置CORS(Cross-origin">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/03/16/%E4%BA%A4%E4%BA%9201/assets/img.PNG">
+<meta property="article:published_time" content="2021-03-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-16T09:56:01.711Z">
 <meta property="article:author" content="zhp">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/03/16/%E4%BA%A4%E4%BA%9201/assets/img.PNG">
   
     <link rel="alternative" href="/atom.xml" title="两个苹果一个人" type="application/atom+xml">
   
@@ -146,16 +150,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-交互01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-交互01" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/16/%E4%BA%A4%E4%BA%9201/">ajax01</a>
+    <h1 class="article-title" itemprop="name">
+      ajax01
     </h1>
   
 
@@ -268,6 +270,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -286,16 +309,75 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/16/%E4%BA%A4%E4%BA%9201/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/16/%E4%BA%A4%E4%BA%9201/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/16/%E4%BA%A4%E4%BA%9202/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ajax02</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -310,876 +392,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-交互02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/16/%E4%BA%A4%E4%BA%9202/">ajax02</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/16/%E4%BA%A4%E4%BA%9202/" class="archive-article-date">
-  	<time datetime="2021-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
-<li><p>Fetct基本用法</p>
-<ul>
-<li><p>Request 对象<br>Headers 对象<br>Response对象</p>
-</li>
-<li><p>text方法</p>
-</li>
-<li><p>json方法</p>
-</li>
-</ul>
-</li>
-<li><p>Fetch 与 XMLHttpRequest 的差异</p>
-</li>
-<li><p>axios  的使用</p>
-</li>
-<li><p>简版axios实现</p>
-</li>
-</ul>
-<h2 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h2><ul>
-<li><p>基本用法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">&quot;/test&quot;</span>).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> res.json();</span><br><span class="line">    &#125;).then(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>参数</p>
-<ul>
-<li>第一个参数是请求的url</li>
-<li>第二个参数 options对象 常用配置<ul>
-<li><code>method</code>: 请求使用的方法，如 <code>GET、``POST。</code></li>
-<li><code>headers</code>: 请求的头信息，形式为 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Headers"><code>Headers</code></a> 的对象或包含 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/ByteString"><code>ByteString</code></a> 值的对象字面量。</li>
-<li><code>body</code>: 请求的 body 信息：可能是一个 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob"><code>Blob</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/BufferSource"><code>BufferSource</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/FormData"><code>FormData</code></a>、<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams"><code>URLSearchParams</code></a> 或者 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/USVString"><code>USVString</code></a> 对象。注意 GET 或 HEAD 方法的请求不能包含 body 信息。</li>
-<li><code>mode</code>: 请求的模式，如 <code>cors、</code> <code>no-cors</code> 或者 <code>same-origin。</code><ul>
-<li><code>same-origin</code>表示必须同源，绝对禁止跨域，这个是老版本浏览器默认的安全策略。</li>
-<li><code>no-cors</code>这个就很特殊了，字面意思是禁止以CORS的形式跨域，其实它的效果是，对外域的请求可以发送，外域服务器无论设不设<code>Access-Control-Allow-Origin: *</code>都会接收请求并处理请求，但是浏览器不接收响应，即使外域返回了内容，浏览器也当做没接到</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Headers对象"><a href="#Headers对象" class="headerlink" title="Headers对象"></a>Headers对象</h2><p>你可以通过 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Headers/Headers"><code>Headers()</code></a> 构造函数来创建一个你自己的 headers 对象。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myHeaders = <span class="keyword">new</span> Headers();</span><br><span class="line">myHeaders.append(<span class="string">&quot;Content-Type&quot;</span>, <span class="string">&quot;text/plain&quot;</span>);</span><br><span class="line">myHeaders.append(<span class="string">&quot;Content-Length&quot;</span>, content.length.toString());</span><br><span class="line">myHeaders.append(<span class="string">&quot;X-Custom-Header&quot;</span>, <span class="string">&quot;ProcessThisImmediately&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">myHeaders = <span class="keyword">new</span> Headers(&#123;</span><br><span class="line">  <span class="string">&quot;Content-Type&quot;</span>: <span class="string">&quot;text/plain&quot;</span>,</span><br><span class="line">  <span class="string">&quot;Content-Length&quot;</span>: content.length.toString(),</span><br><span class="line">  <span class="string">&quot;X-Custom-Header&quot;</span>: <span class="string">&quot;ProcessThisImmediately&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h2><h3 id="Response-clone"><a href="#Response-clone" class="headerlink" title="Response.clone()"></a>Response.clone()</h3><p>创建一个Response对象的克隆</p>
-<h3 id="Response-json"><a href="#Response-json" class="headerlink" title="Response.json()"></a>Response.json()</h3><p>读取 Response对象并且将它设置为已读（因为Responses对象被设置为了 stream 的方式，所以它们只能被读取一次） ,并返回一个被解析为JSON格式的promise对象</p>
-<h3 id="Response-text"><a href="#Response-text" class="headerlink" title="Response.text()"></a>Response.text()</h3><p>读取 Response对象并且将它设置为已读（因为Responses对象被设置为了 stream 的方式，所以它们只能被读取一次） ,并返回一个被解析为USVString格式的promise对象</p>
-<p>##Fetch 与 XMLHttpRequest 的差异</p>
-<ul>
-<li><p>fetch不能监控进度</p>
-</li>
-<li><p>fetch兼容性</p>
-</li>
-</ul>
-<h1 id="axios库"><a href="#axios库" class="headerlink" title="axios库"></a>axios库</h1><h3 id="一、axios的主要函数"><a href="#一、axios的主要函数" class="headerlink" title="一、axios的主要函数"></a>一、axios的主要函数</h3><ul>
-<li>定义 </li>
-<li>调用</li>
-</ul>
-<h3 id="二、针对url的一些处理"><a href="#二、针对url的一些处理" class="headerlink" title="二、针对url的一些处理"></a>二、针对url的一些处理</h3><ul>
-<li><p>工具类util  —&gt;单例模式；</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> util =  &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-</li>
-</ul>
-<h3 id="三、post参数及请求头的处理"><a href="#三、post参数及请求头的处理" class="headerlink" title="三、post参数及请求头的处理"></a>三、post参数及请求头的处理</h3><ul>
-<li>针对post参数的处理</li>
-<li><ul>
-<li>data来进行json转换</li>
-<li>设置默认头部 </li>
-</ul>
-</li>
-</ul>
-<h3 id="四、返还对象的包装"><a href="#四、返还对象的包装" class="headerlink" title="四、返还对象的包装"></a>四、返还对象的包装</h3><ul>
-<li><p>返还对象的形式</p>
-</li>
-<li><p>针对返还对象的处理</p>
-</li>
-</ul>
-<h3 id="五、工厂模式函数和混入模式"><a href="#五、工厂模式函数和混入模式" class="headerlink" title="五、工厂模式函数和混入模式"></a>五、工厂模式函数和混入模式</h3><ul>
-<li><p>axios的使用方式</p>
-<ul>
-<li>方式一</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios(&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式二</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.get(&#123;&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方式三</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.create(&#123;&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>工厂模式函数和混入模式</p>
-</li>
-<li><p>继承函数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">extends</span>(<span class="params">a, b, thisArg</span>)</span> &#123;</span><br><span class="line">    <span class="comment">//只拷贝循环对象自身方法</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> b) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b.hasOwnProperty(key)) &#123;</span><br><span class="line">            <span class="keyword">let</span> val = b[key];</span><br><span class="line">            <span class="comment">// console.log(&quot;val值&quot;,val);</span></span><br><span class="line">            <span class="keyword">if</span> (thisArg &amp;&amp; <span class="keyword">typeof</span> val === <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">                a[key] = val.bind(thisArg);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                a[key] = val;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h3 id="六、拦截器"><a href="#六、拦截器" class="headerlink" title="六、拦截器"></a>六、拦截器</h3><ul>
-<li>拆分dispathXhr触发ajax方法；</li>
-</ul>
-<ul>
-<li><p>拦截管理器</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InterceptorManager</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.handlers = [];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">use</span>(<span class="params">fulfilled, rejected</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.handlers.push(&#123;</span><br><span class="line">            fulfilled: fulfilled,</span><br><span class="line">            rejected: rejected</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>任务链执行对应函数  (注意this指向)</p>
-</li>
-</ul>
-<p>七、Adapters适配器；</p>
-<ul>
-<li> 在触发dispathXhr函数中判断axios运行的环境</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//环境判断  和发送网络请求</span></span><br><span class="line">       <span class="keyword">if</span> (<span class="keyword">typeof</span> process !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; <span class="built_in">Object</span>.prototype.toString.call(process) === <span class="string">&#x27;[object process]&#x27;</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="built_in">this</span>.adapters.http(<span class="built_in">this</span>.instanceConfig);</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> XMLHttpRequest !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="built_in">this</span>.adapters.xhr(<span class="built_in">this</span>.instanceConfig);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
-
-
-<ul>
-<li>Adapters中对应不同的处理</li>
-</ul>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">http</span>(<span class="params">config</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.config = config;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line">            <span class="keyword">const</span> urls = <span class="built_in">require</span>(<span class="string">&quot;url&quot;</span>);</span><br><span class="line">            <span class="keyword">let</span> &#123; data = <span class="literal">null</span>, url, method = <span class="string">&#x27;get&#x27;</span>, params, headers = &#123;&#125; &#125; = <span class="built_in">this</span>.config;</span><br><span class="line">            <span class="keyword">let</span> pathObj = urls.parse(url)</span><br><span class="line">            <span class="keyword">let</span> options = &#123;</span><br><span class="line">                host: pathObj.hostname,</span><br><span class="line">                port: pathObj.port,</span><br><span class="line">                path: pathObj.path,</span><br><span class="line">                method: <span class="built_in">this</span>.config.method.toUpperCase(),</span><br><span class="line">                headers: headers</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="comment">// let options = &#123;</span></span><br><span class="line">            <span class="comment">//     host:&#x27;localhost&#x27;,</span></span><br><span class="line">            <span class="comment">//     port:3000,</span></span><br><span class="line">            <span class="comment">//     path:&#x27;/atest&#x27;,</span></span><br><span class="line">            <span class="comment">//     method:&#x27;POST&#x27;,</span></span><br><span class="line">            <span class="comment">//     headers:&#123;</span></span><br><span class="line">            <span class="comment">//         &quot;content-type&quot;:&quot;application/json&quot;</span></span><br><span class="line">            <span class="comment">//     &#125;</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">            <span class="comment">// console.log(options);</span></span><br><span class="line">            <span class="keyword">let</span> request = http.request(options, <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">let</span> reslut = <span class="string">&quot;&quot;</span>;</span><br><span class="line">                res.on(<span class="string">&quot;data&quot;</span>, <span class="function"><span class="params">chunk</span> =&gt;</span> &#123;</span><br><span class="line">                    reslut += chunk;</span><br><span class="line">                &#125;)</span><br><span class="line">                res.on(<span class="string">&quot;end&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">                    <span class="built_in">console</span>.log(reslut.toString())</span><br><span class="line">                    resolve(<span class="built_in">JSON</span>.parse(reslut.toString()));</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">            request.on(<span class="string">&quot;error&quot;</span>, <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                reject(err);</span><br><span class="line">            &#125;)</span><br><span class="line">            request.end();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ajax02//" class="article-tag-list-link color2">ajax02</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/16/%E4%BA%A4%E4%BA%9202/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CORS%E8%B7%A8%E5%9F%9F%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">CORS跨域设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jwt-%E9%89%B4%E6%9D%83"><span class="toc-number">2.1.</span> <span class="toc-text">jwt 鉴权</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-交互" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/09/%E4%BA%A4%E4%BA%92/">ajax</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/09/%E4%BA%A4%E4%BA%92/" class="archive-article-date">
-  	<time datetime="2021-03-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ol>
-<li>理解ajax基本使用</li>
-<li>会使用XMLHttpRequest对象实现数据交互</li>
-<li>了解onreadystatechange服务器响应信息</li>
-<li>会使用FormData对象上传文件</li>
-<li>了解upload事件对象</li>
-<li>ajax使用</li>
-<li>XMLHttpRequest对象</li>
-<li>FormData对象</li>
-<li>upload 事件对象</li>
-</ol>
-        
-          <a class="article-more-a" href="/2021/03/09/%E4%BA%A4%E4%BA%92/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ajax//" class="article-tag-list-link color5">ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/09/%E4%BA%A4%E4%BA%92/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2021-03-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="正则工具"><a href="#正则工具" class="headerlink" title="正则工具"></a><a target="_blank" rel="noopener" href="http://regexper.com/">正则工具</a></h2><h2 id="正则表达式（Regular-Expression）"><a href="#正则表达式（Regular-Expression）" class="headerlink" title="正则表达式（Regular Expression）"></a>正则表达式（Regular Expression）</h2><p>​    1）正则的创建<br>​       2）正则的匹配方法<br>​       3）元字符<br>​       4）字符集合<br>​       5）边界<br>​       6）分组<br>    7）反向引用<br>​    8）数量词汇<br>​    9）匹配模式</p>
-        
-          <a class="article-more-a" href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/正则表达式//" class="article-tag-list-link color1">正则表达式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-es6高阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/05/es6%E9%AB%98%E9%98%B6/">es6高阶</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/05/es6%E9%AB%98%E9%98%B6/" class="archive-article-date">
-  	<time datetime="2021-03-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ES6高阶"><a href="#ES6高阶" class="headerlink" title="ES6高阶"></a>ES6高阶</h2><ul>
-<li><p>1.利用defineProperty实现数据劫持;</p>
-</li>
-<li><p>2.利用ES6中proxy实现数据劫持</p>
-</li>
-<li><p>3.mvvm框架中编译数据到视图</p>
-</li>
-<li><p>4.实现数据驱动视图更新；</p>
-</li>
-<li><p>5.es6模块化改造自己的mvvm框架；</p>
-</li>
-<li><p>6.AMD模块化require.js介绍；</p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2021/03/05/es6%E9%AB%98%E9%98%B6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/es6高阶//" class="article-tag-list-link color1">es6高阶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/05/es6%E9%AB%98%E9%98%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-异步处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/">异步处理</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2021-03-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>同步及异步概念</li>
-<li>方块运动的实现</li>
-<li>promise的用法 </li>
-<li>then的返还值</li>
-<li>Async 函数 和 await </li>
-<li>Async及await改造案例</li>
-</ul>
-<p>理解并学会使用promise使用方式以及async 、await的使用</p>
-        
-          <a class="article-more-a" href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/异步处理//" class="article-tag-list-link color5">异步处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2021-03-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="知识点一"><a href="#知识点一" class="headerlink" title="知识点一"></a>知识点一</h1><p>​ 1）拖拽案例</p>
-<p>​    2）构造函数继承</p>
-<p>​    3）原型的继承</p>
-<p>​    4）拖拽案例的继承改造</p>
-<p>​    5）es6中的类的用法</p>
-        
-          <a class="article-more-a" href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/面向对象//" class="article-tag-list-link color5">面向对象</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/%E5%9F%BA%E7%A1%80/">ECMAScript 6 基础</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ECMAScript-6-简介"><a href="#ECMAScript-6-简介" class="headerlink" title="ECMAScript 6 简介"></a>ECMAScript 6 简介</h2><ul>
-<li>JavaScript 三大组成部分<ul>
-<li>ECMAScript </li>
-<li>DOM</li>
-<li>BOM </li>
-</ul>
-</li>
-<li>ECMAScript 发展历史 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Language_Resources">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Language_Resources</a></li>
-<li>ECMAScript 包含内容：JS 中的数据类型及相关操作，流程控制，运算符及相关运算……</li>
-</ul>
-        
-          <a class="article-more-a" href="/2021/03/01/%E5%9F%BA%E7%A1%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ECMAScript-6-基础//" class="article-tag-list-link color1">ECMAScript 6 基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数组方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">数组方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ES6-新增数组方法"><a href="#ES6-新增数组方法" class="headerlink" title="ES6+ 新增数组方法"></a>ES6+ 新增数组方法</h1><h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h2><p>Array Array.from(arrayLike[, mapFn[, thisArg]]) 将类数组转换成数组</p>
-<p>参数：<br>    arrayLike 类数组</p>
-<p>可选参数:<br>    mapFn 类似 map 方法，循环类数组时的回函函数，返回值组成新数组<br>    thisArg mapFn 函数执行时的 this 指向</p>
-<p>返回值<br>    根据 arrayLike 生成的新数组</p>
-        
-          <a class="article-more-a" href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数组方法//" class="article-tag-list-link color5">数组方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-对象方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/">对象方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ES6-新增对象方法"><a href="#ES6-新增对象方法" class="headerlink" title="ES6+ 新增对象方法"></a>ES6+ 新增对象方法</h1><h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h2><p>Object Object.assign(target, …sources) 将所有可枚举属性的值从一个或多个源对象复制到目标对象</p>
-<p>参数:<br>    target<br>        目标对象<br>    sources<br>        源对象<br>返回值：<br>    目标对象</p>
-        
-          <a class="article-more-a" href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/对象方法//" class="article-tag-list-link color5">对象方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1202,8 +440,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

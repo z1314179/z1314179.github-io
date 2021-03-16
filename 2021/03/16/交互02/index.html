@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>两个苹果一个人</title>
+  <title>ajax02 | 两个苹果一个人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zhp-blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="两个苹果一个人">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="知识点 Fetct基本用法  Request 对象Headers 对象Response对象  text方法  json方法    Fetch 与 XMLHttpRequest 的差异  axios  的使用  简版axios实现   Fetch 基本用法 1234567fetch(&quot;&#x2F;test&quot;).then(res&#x3D;&gt;&amp;#123;        return res.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax02">
+<meta property="og:url" content="http://example.com/2021/03/16/%E4%BA%A4%E4%BA%9202/index.html">
 <meta property="og:site_name" content="两个苹果一个人">
-<meta property="og:description" content="zhp-blog">
+<meta property="og:description" content="知识点 Fetct基本用法  Request 对象Headers 对象Response对象  text方法  json方法    Fetch 与 XMLHttpRequest 的差异  axios  的使用  简版axios实现   Fetch 基本用法 1234567fetch(&quot;&#x2F;test&quot;).then(res&#x3D;&gt;&amp;#123;        return res.js">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-16T09:57:11.325Z">
 <meta property="article:author" content="zhp">
 <meta name="twitter:card" content="summary">
   
@@ -146,185 +148,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-交互01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-交互02" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/16/%E4%BA%A4%E4%BA%9201/">ajax01</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/16/%E4%BA%A4%E4%BA%9201/" class="archive-article-date">
-  	<time datetime="2021-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p>​    1）CORS解决跨域</p>
-<p>​    2）预检请求</p>
-<p>​    3）利用koa-server-http-proxy实现服务端代理</p>
-<p>​    4）前后分离开发</p>
-<p>​    5）基于jwt鉴权</p>
-<p>​    </p>
-<ul>
-<li><p>会使用CORS解决跨域问题</p>
-</li>
-<li><p>了解后端代理</p>
-</li>
-<li><p>会使用koa-server-http-proxy中间件实现代理</p>
-</li>
-<li><p>了解前后端分离工作场景</p>
-</li>
-</ul>
-<h2 id="CORS跨域设置"><a href="#CORS跨域设置" class="headerlink" title="CORS跨域设置"></a>CORS跨域设置</h2><p>CORS(Cross-origin resource sharing)，跨域资源共享，是一份浏览器技术的规范，用来避开浏览器的同源策略</p>
-<p>简单来说就是解决跨域问题的除了jsonp外的另一种方法；比jsonp更加优雅。</p>
-<p>1.(‘Access-Control-Allow-Origin’, ‘*’)  //这个表示任意域名都可以访问，默认不能携带cookie了。(必须字段)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.header(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;http://www.baidu.com&#x27;</span>); <span class="comment">//这样写，只有www.baidu.com 可以访问。</span></span><br><span class="line">res.header(<span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>, <span class="string">&#x27;*&#x27;</span>); <span class="comment">//这个表示任意域名都可以访问。</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>2.Access-Control-Allow-Headers ：设置允许requset设置的头部；</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">res.header(<span class="string">&#x27;Access-Control-Allow-Headers&#x27;</span>, <span class="string">&#x27;Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild&#x27;</span>);</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-
-
-<p>3.Access-Control-Expose-Headers 允许客户端获取的头部key；</p>
-<p> (‘Access-Control-Expose-Headers’，’Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild’)</p>
-<p>CORS请求时，<code>XMLHttpRequest</code>对象的<code>getResponseHeader()</code>方法只能拿到6个基本字段：<code>Cache-Control</code>、<code>Content-Language</code>、<code>Content-Type</code>、<code>Expires</code>、<code>Last-Modified</code>、<code>Pragma</code>。如果想拿到其他字段，就必须在<code>Access-Control-Expose-Headers</code>里面指定。</p>
-<p>5、预检请求</p>
-<ul>
-<li><p>简单的请求直接发送</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br><span class="line">HEAD</span><br><span class="line">POST</span><br><span class="line">或者</span><br><span class="line">content-type</span><br><span class="line">text&#x2F;plain</span><br><span class="line">multipart&#x2F;form-data</span><br><span class="line">application&#x2F;x-www-form-urlencoded</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<ul>
-<li><p>预检请求</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PUT</span><br><span class="line">DELETE</span><br><span class="line">CONNECT</span><br><span class="line">OPTIONS</span><br><span class="line">TRACE</span><br><span class="line">PATCH</span><br></pre></td></tr></table></figure></li>
-<li><p>Access-Control-Max-Age用来指定本次预检请求的有效期，单位为秒，在此期间不用发出另一条预检请求。(预检请求)</p>
-<ul>
-<li>发送预检请求</li>
-</ul>
-</li>
-</ul>
-<p>##后端代理</p>
-<ul>
-<li><p>跨域是浏览器规范，通过同服务器请求数据，不通过浏览器请求，也能解决浏览器限制；</p>
-</li>
-<li><p>转发请求</p>
-</li>
-<li><p>利用http模块实现简单的服务器转发</p>
-</li>
-<li><p>利用 koa-server-http-proxy中间件实现代理</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.use(koaServerHttpProxy(<span class="string">&#x27;/api&#x27;</span>, &#123;</span><br><span class="line">    target: <span class="string">&#x27;http://localhost:4000&#x27;</span>,</span><br><span class="line">    pathRewrite: &#123; <span class="string">&#x27;^/api&#x27;</span>: <span class="string">&#x27;&#x27;</span> &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h3 id="jwt-鉴权"><a href="#jwt-鉴权" class="headerlink" title="jwt 鉴权"></a>jwt 鉴权</h3><p>一、jwt：json web token是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准</p>
-<p><img src='assets/img.PNG'/>二、生成token</p>
-<ul>
-<li><p>jsonwebtoken  模块</p>
-<ul>
-<li><pre><code class="js">     const token = jwt.sign(&#123;
-           name: reslut[0].username,
-           _id: reslut[0].id
-       &#125;, &#39;my_token&#39;, &#123; expiresIn: &#39;2h&#39; &#125;);
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">三、缓存token：cookie 或者是 locaStroage</span><br><span class="line"></span><br><span class="line">四、token的组成</span><br><span class="line"></span><br><span class="line">- 头部的基本信息；</span><br><span class="line"></span><br><span class="line">  &#96;&#96;&#96;js</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;typ&quot;: &quot;JWT&quot;,</span><br><span class="line">    &quot;alg&quot;: &quot;HS256&quot;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>paload  :存放自定义信息  ； 预定义信息有如下几个：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">iss: 该JWT的签发者</span><br><span class="line">sub: 该JWT所面向的用户</span><br><span class="line">aud: 接收该JWT的一方</span><br><span class="line">exp(expires): 什么时候过期，这里是一个Unix时间戳</span><br><span class="line">iat(issued at): 在什么时候签发的</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<ul>
-<li>signature  签名  哈希需要有secret；</li>
-</ul>
-<p>Access-Control-Allow-Credentials:布尔值  true允许携带凭证；(可选字段)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//客户端设置允许携带用户凭证</span></span><br><span class="line">xhr.withCredentials = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//服务端设置允许携带凭证</span></span><br><span class="line">ctx.set(<span class="string">&quot;Access-Control-Allow-Credentials&quot;</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-
-
-<p>五、前端的认证</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;Authorization&quot;</span>,<span class="string">&quot;Bearer &quot;</span> + token</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ajax01//" class="article-tag-list-link color2">ajax01</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/16/%E4%BA%A4%E4%BA%9201/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-交互02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/16/%E4%BA%A4%E4%BA%9202/">ajax02</a>
+    <h1 class="article-title" itemprop="name">
+      ajax02
     </h1>
   
 
@@ -471,6 +302,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -489,16 +341,84 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/16/%E4%BA%A4%E4%BA%9202/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/16/%E4%BA%A4%E4%BA%9202/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/03/16/%E4%BA%A4%E4%BA%9201/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ajax01
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/09/%E4%BA%A4%E4%BA%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ajax</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -513,673 +433,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-交互" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/09/%E4%BA%A4%E4%BA%92/">ajax</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/09/%E4%BA%A4%E4%BA%92/" class="archive-article-date">
-  	<time datetime="2021-03-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ol>
-<li>理解ajax基本使用</li>
-<li>会使用XMLHttpRequest对象实现数据交互</li>
-<li>了解onreadystatechange服务器响应信息</li>
-<li>会使用FormData对象上传文件</li>
-<li>了解upload事件对象</li>
-<li>ajax使用</li>
-<li>XMLHttpRequest对象</li>
-<li>FormData对象</li>
-<li>upload 事件对象</li>
-</ol>
-        
-          <a class="article-more-a" href="/2021/03/09/%E4%BA%A4%E4%BA%92/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ajax//" class="article-tag-list-link color5">ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/09/%E4%BA%A4%E4%BA%92/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fetch"><span class="toc-number">2.</span> <span class="toc-text">Fetch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Headers%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.</span> <span class="toc-text">Headers对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Response%E5%AF%B9%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">Response对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Response-clone"><span class="toc-number">4.1.</span> <span class="toc-text">Response.clone()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Response-json"><span class="toc-number">4.2.</span> <span class="toc-text">Response.json()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Response-text"><span class="toc-number">4.3.</span> <span class="toc-text">Response.text()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#axios%E5%BA%93"><span class="toc-number"></span> <span class="toc-text">axios库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81axios%E7%9A%84%E4%B8%BB%E8%A6%81%E5%87%BD%E6%95%B0"><span class="toc-number">0.1.</span> <span class="toc-text">一、axios的主要函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E9%92%88%E5%AF%B9url%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A4%84%E7%90%86"><span class="toc-number">0.2.</span> <span class="toc-text">二、针对url的一些处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81post%E5%8F%82%E6%95%B0%E5%8F%8A%E8%AF%B7%E6%B1%82%E5%A4%B4%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">0.3.</span> <span class="toc-text">三、post参数及请求头的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BF%94%E8%BF%98%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%85%E8%A3%85"><span class="toc-number">0.4.</span> <span class="toc-text">四、返还对象的包装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%87%BD%E6%95%B0%E5%92%8C%E6%B7%B7%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="toc-number">0.5.</span> <span class="toc-text">五、工厂模式函数和混入模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">0.6.</span> <span class="toc-text">六、拦截器</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2021-03-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="正则工具"><a href="#正则工具" class="headerlink" title="正则工具"></a><a target="_blank" rel="noopener" href="http://regexper.com/">正则工具</a></h2><h2 id="正则表达式（Regular-Expression）"><a href="#正则表达式（Regular-Expression）" class="headerlink" title="正则表达式（Regular Expression）"></a>正则表达式（Regular Expression）</h2><p>​    1）正则的创建<br>​       2）正则的匹配方法<br>​       3）元字符<br>​       4）字符集合<br>​       5）边界<br>​       6）分组<br>    7）反向引用<br>​    8）数量词汇<br>​    9）匹配模式</p>
-        
-          <a class="article-more-a" href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/正则表达式//" class="article-tag-list-link color1">正则表达式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-es6高阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/05/es6%E9%AB%98%E9%98%B6/">es6高阶</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/05/es6%E9%AB%98%E9%98%B6/" class="archive-article-date">
-  	<time datetime="2021-03-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ES6高阶"><a href="#ES6高阶" class="headerlink" title="ES6高阶"></a>ES6高阶</h2><ul>
-<li><p>1.利用defineProperty实现数据劫持;</p>
-</li>
-<li><p>2.利用ES6中proxy实现数据劫持</p>
-</li>
-<li><p>3.mvvm框架中编译数据到视图</p>
-</li>
-<li><p>4.实现数据驱动视图更新；</p>
-</li>
-<li><p>5.es6模块化改造自己的mvvm框架；</p>
-</li>
-<li><p>6.AMD模块化require.js介绍；</p>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2021/03/05/es6%E9%AB%98%E9%98%B6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/es6高阶//" class="article-tag-list-link color1">es6高阶</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/05/es6%E9%AB%98%E9%98%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-异步处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/">异步处理</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2021-03-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>同步及异步概念</li>
-<li>方块运动的实现</li>
-<li>promise的用法 </li>
-<li>then的返还值</li>
-<li>Async 函数 和 await </li>
-<li>Async及await改造案例</li>
-</ul>
-<p>理解并学会使用promise使用方式以及async 、await的使用</p>
-        
-          <a class="article-more-a" href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/异步处理//" class="article-tag-list-link color5">异步处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/03/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">面向对象</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2021-03-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="知识点一"><a href="#知识点一" class="headerlink" title="知识点一"></a>知识点一</h1><p>​ 1）拖拽案例</p>
-<p>​    2）构造函数继承</p>
-<p>​    3）原型的继承</p>
-<p>​    4）拖拽案例的继承改造</p>
-<p>​    5）es6中的类的用法</p>
-        
-          <a class="article-more-a" href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/面向对象//" class="article-tag-list-link color5">面向对象</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/02/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/%E5%9F%BA%E7%A1%80/">ECMAScript 6 基础</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="ECMAScript-6-简介"><a href="#ECMAScript-6-简介" class="headerlink" title="ECMAScript 6 简介"></a>ECMAScript 6 简介</h2><ul>
-<li>JavaScript 三大组成部分<ul>
-<li>ECMAScript </li>
-<li>DOM</li>
-<li>BOM </li>
-</ul>
-</li>
-<li>ECMAScript 发展历史 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Language_Resources">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Language_Resources</a></li>
-<li>ECMAScript 包含内容：JS 中的数据类型及相关操作，流程控制，运算符及相关运算……</li>
-</ul>
-        
-          <a class="article-more-a" href="/2021/03/01/%E5%9F%BA%E7%A1%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ECMAScript-6-基础//" class="article-tag-list-link color1">ECMAScript 6 基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数组方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">数组方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ES6-新增数组方法"><a href="#ES6-新增数组方法" class="headerlink" title="ES6+ 新增数组方法"></a>ES6+ 新增数组方法</h1><h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h2><p>Array Array.from(arrayLike[, mapFn[, thisArg]]) 将类数组转换成数组</p>
-<p>参数：<br>    arrayLike 类数组</p>
-<p>可选参数:<br>    mapFn 类似 map 方法，循环类数组时的回函函数，返回值组成新数组<br>    thisArg mapFn 函数执行时的 this 指向</p>
-<p>返回值<br>    根据 arrayLike 生成的新数组</p>
-        
-          <a class="article-more-a" href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数组方法//" class="article-tag-list-link color5">数组方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-对象方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/">对象方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ES6-新增对象方法"><a href="#ES6-新增对象方法" class="headerlink" title="ES6+ 新增对象方法"></a>ES6+ 新增对象方法</h1><h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign"></a>Object.assign</h2><p>Object Object.assign(target, …sources) 将所有可枚举属性的值从一个或多个源对象复制到目标对象</p>
-<p>参数:<br>    target<br>        目标对象<br>    sources<br>        源对象<br>返回值：<br>    目标对象</p>
-        
-          <a class="article-more-a" href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/对象方法//" class="article-tag-list-link color5">对象方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1202,8 +481,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | 两个一</title>
+  <title>node | 两个一</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zhp-blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="两个一">
-<meta property="og:url" content="http://example.com/archives/2021/page/2/index.html">
+  <meta name="description" content="Node.js01 知识点  nodejs的安装及使用 服务端及客户端 commonjs规范 fs模块的使用(文件操作及目录操作) stream buffer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node">
+<meta property="og:url" content="http://example.com/2021/03/22/node/index.html">
 <meta property="og:site_name" content="两个一">
-<meta property="og:description" content="zhp-blog">
+<meta property="og:description" content="Node.js01 知识点  nodejs的安装及使用 服务端及客户端 commonjs规范 fs模块的使用(文件操作及目录操作) stream buffer">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-22T03:02:21.694Z">
 <meta property="article:author" content="zhp">
 <meta name="twitter:card" content="summary">
   
@@ -146,139 +148,353 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-node" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node
+    </h1>
+  
+
+        
+        <a href="/2021/03/22/node/" class="archive-article-date">
+  	<time datetime="2021-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-22</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Node-js01"><a href="#Node-js01" class="headerlink" title="Node.js01"></a>Node.js01</h2><ul>
+<li><p>知识点</p>
+<ul>
+<li>nodejs的安装及使用</li>
+<li>服务端及客户端</li>
+<li>commonjs规范</li>
+<li>fs模块的使用(文件操作及目录操作)</li>
+<li>stream</li>
+<li>buffer</li>
+</ul>
+<a id="more"></a></li>
+<li><p>主要点</p>
+<ul>
+<li>Node.js安装及使用</li>
+<li>通过Node.js搭建服务器</li>
+<li>模块化及自定义模块</li>
+<li>内置模块fs的使用</li>
+<li>buffer及stream</li>
+</ul>
+</li>
+</ul>
+<h3 id="Node-js介绍"><a href="#Node-js介绍" class="headerlink" title="Node.js介绍"></a>Node.js介绍</h3><hr>
+<ul>
+<li>Node.js 诞生于2009年，Node.js采用C++语言编写而成，是 一个Javascript的运行环境。Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境 ，让JavaScript的运行脱离浏览器端，可以使用JavaScript语言 书写服务器端代码。</li>
+</ul>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>​    <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js官网</a>下载稳定版本,node偶数版本为稳定版本，奇数版本为非稳定版本。</p>
+<ul>
+<li><p>mac 直接安装  或者 brew来安装</p>
+</li>
+<li><p>安装完Node.js会自动安装NPM(Node Package Manager)：包管理工具；</p>
+</li>
+<li><p>通过指令 node -v 来查看是否安装完成和查看node版本号；npm -v 来查看npm版本。</p>
+</li>
+</ul>
+<h3 id="使用Node-js实现第一个服务器"><a href="#使用Node-js实现第一个服务器" class="headerlink" title="使用Node.js实现第一个服务器"></a>使用Node.js实现第一个服务器</h3><p>初步感受Node.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入http模块</span></span><br><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br><span class="line"><span class="comment">//创建一个服务器</span></span><br><span class="line"><span class="keyword">let</span> serve = http.createServer(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    res.end(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//设置端口号</span></span><br><span class="line">serve.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Google Chrome 默认非安全端口列表，尽量避免以下端口。</p>
+<p>  1,    // tcpmux<br>  7,    // echo<br>  9,    // discard<br>  11,   // systat<br>  13,   // daytime<br>  15,   // netstat<br>  17,   // qotd<br>  19,   // chargen<br>  20,   // ftp data<br>  21,   // ftp access<br>  22,   // ssh<br>  23,   // telnet<br>  25,   // smtp<br>  37,   // time<br>  42,   // name<br>  43,   // nicname<br>  53,   // domain<br>  77,   // priv-rjs<br>  79,   // finger<br>  87,   // ttylink<br>  95,   // supdup<br>  101,  // hostriame<br>  102,  // iso-tsap<br>  103,  // gppitnp<br>  104,  // acr-nema<br>  109,  // pop2<br>  110,  // pop3<br>  111,  // sunrpc<br>  113,  // auth<br>  115,  // sftp<br>  117,  // uucp-path<br>  119,  // nntp<br>  123,  // NTP<br>  135,  // loc-srv /epmap<br>  139,  // netbios<br>  143,  // imap2<br>  179,  // BGP<br>  389,  // ldap<br>  465,  // smtp+ssl<br>  512,  // print / exec<br>  513,  // login<br>  514,  // shell<br>  515,  // printer<br>  526,  // tempo<br>  530,  // courier<br>  531,  // chat<br>  532,  // netnews<br>  540,  // uucp<br>  556,  // remotefs<br>  563,  // nntp+ssl<br>  587,  // stmp?<br>  601,  // ??<br>  636,  // ldap+ssl<br>  993,  // ldap+ssl<br>  995,  // pop3+ssl<br>  2049, // nfs<br>  3659, // apple-sasl / PasswordServer<br>  4045, // lockd<br>  6000, // X11<br>  6665, // Alternate IRC [Apple addition]<br>  6666, // Alternate IRC [Apple addition]<br>  6667, // Standard IRC [Apple addition]<br>  6668, // Alternate IRC [Apple addition]</p>
+<p>  6669, // Alternate IRC [Apple addition]</p>
+</li>
+</ul>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>一、为什么会有模块化</p>
+<ul>
+<li><p>在JavaScript发展初期就是为了实现简单的页面交互逻辑，寥寥数语即，如今随着前端代码日益膨胀</p>
+<p>这时候JavaScript作为嵌入式的脚本语言的定位动摇了，JavaScript却没有为组织代码提供任何明显帮助，JavaScript极其简单的代码组织规范不足以驾驭如此庞大规模的代码；</p>
+</li>
+</ul>
+<p>二、Node.js中的模块化  commonjs规范</p>
+<ul>
+<li><p>CommonJS就是为JS的表现来制定规范，因为js没有模块的功能所以CommonJS应运而生，它希望js可以在任何地方运行，不只是浏览器中。</p>
+<p>1、创建自定义模块</p>
+<ul>
+<li><p>引入一个文件 形式模块</p>
+<p>home.js执行文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过require来引入</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;./aModule&quot;</span>); <span class="comment">//注意一定要有&quot;./&quot;，文件后缀可加可不加。</span></span><br></pre></td></tr></table></figure>
+<p>amodule.js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;我是amodule模块111&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>引入文件夹形式模块</p>
+<ul>
+<li>home.js执行文件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;./aModuledir&quot;</span>); <span class="comment">//必须加&quot;./&quot;</span></span><br></pre></td></tr></table></figure>
+<p>​       aModuleDir里的index.js文件,会自动查找文件夹下的index.js文件执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;我是aModule模块文件夹&quot;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>当然也可以配置默认启动文件，在文件夹内新建package.json来指定执行文件</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;name&quot;</span>:<span class="string">&quot;aModule&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;version&quot;</span>:<span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;main&quot;</span>:<span class="string">&quot;test.js&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>自定义模块的按需导出</p>
+<p>通过module.exports 导出； ___dirname  , __filename</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    a:<span class="string">&quot;我是a的值&quot;</span>,</span><br><span class="line">    <span class="function"><span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&quot;我是导出的b函数&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>引入导出文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mymodule = <span class="built_in">require</span>(<span class="string">&quot;bModule&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(mymodule.a);</span><br><span class="line">mymodule.b();</span><br></pre></td></tr></table></figure>
+<p>或者 通过  exports来导出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;我是fn函数&quot;</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>导入文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myfn = <span class="built_in">require</span>(<span class="string">&quot;bModule&quot;</span>).fn;</span><br><span class="line">myfn();</span><br><span class="line"><span class="comment">// 或者 通过解构赋值 </span></span><br><span class="line"><span class="keyword">let</span> &#123; fn &#125; = <span class="built_in">require</span>(<span class="string">&quot;bModule&quot;</span>);</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure></li>
+<li><p>模块加载的优先级 ,先文件再目录；</p>
+</li>
+</ul>
+<p>2、内置模块；</p>
+<p>nodejs内置模块有：Buffer，C/C++Addons，Child Processes，Cluster，Console，Cr</p>
+<p>ypto，Debugger，DNS，Domain，Errors，Events，File System，</p>
+<p>Globals，HTTP，HTTPS，Modules，Net，OS，Path，Process，P unycode，Query Strings，Readline，REPL，Stream，String De coder，Timers，TLS/SSL，TTY，UDP/Datagram，URL， Utilities，V8，VM，ZLIB；内置模块不需要安装，外置模块需要安装；</p>
+<h3 id="npm包管理器"><a href="#npm包管理器" class="headerlink" title="npm包管理器"></a>npm包管理器</h3><p>NPM(Node Package Manager)  官网的地址是 <a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm官网</a>    </p>
+<ul>
+<li>npm常用指令；<ul>
+<li>npm init：引导创建一个package.json文件</li>
+<li>npm help(npm -h) ：查看npm帮助信息</li>
+<li>npm version (npm -v) : 查看npm版本；</li>
+<li>npm search：查找</li>
+<li>npm install (npm i)：安装  默认在当前目录，如果没有node_modules 会创建文件夹；<ul>
+<li>npm install module_name -S 或者–save    即    npm install module_name –save    写入dependencies</li>
+<li>npm install module_name -D  或者 —save-dev   即    npm install module_name –save-dev 写入devDependencies</li>
+<li>npm install module_name -g 全局安装(命令行使用)</li>
+<li>指定版本安装模块   npm i module_name @1.0 通过  “@”符号指定；</li>
+</ul>
+</li>
+<li>npm update(npm -up)：更新</li>
+<li>npm remove 或者  npm uninstall：删除</li>
+<li>npm root  查看当前包安装的路径  或者通过  npm root -g 来查看全局安装路径；</li>
+</ul>
+</li>
+</ul>
+<h2 id="fs模块"><a href="#fs模块" class="headerlink" title="fs模块"></a>fs模块</h2><ul>
+<li><p>fs是文件操作模块，所有文件操作都是有同步和异步之分，特点是同步会加上 “Sync” 如：异步读取文件  “readFile”，同步读取文件 “readFileSync”；</p>
+<p>文件操作</p>
+<ul>
+<li><p>文件读取：</p>
+<ul>
+<li>异步读取</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line">fs.readFile(<span class="string">&quot;1.txt&quot;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>同步读取文件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> res = fs.readFileSync(<span class="string">&quot;1.txt&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(res.toString());</span><br></pre></td></tr></table></figure></li>
+<li><p>文件写入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>);</span><br><span class="line"><span class="comment">//flag配置  &quot;a&quot;:追加写入，&quot;w&quot;:写入，&quot;r&quot;:读取</span></span><br><span class="line">fs.writeFile(<span class="string">&quot;2.txt&quot;</span>,<span class="string">&quot;我是要写入的内容&quot;</span>,&#123;<span class="attr">flag</span>:<span class="string">&quot;w&quot;</span>&#125;,<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;写入成功&quot;</span>);   </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><p>文件删除</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fs.unlink(<span class="string">&quot;2.txt&quot;</span>,<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;删除成功&quot;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><p>复制文件</p>
+<ul>
+<li>先读取文件再写入文件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mycopy</span>(<span class="params">src,dest</span>)</span>&#123;</span><br><span class="line">   fs.writeFileSync(dest,fs.readFileSync(src));</span><br><span class="line">&#125;</span><br><span class="line">mycopy(<span class="string">&quot;1.txt&quot;</span>,<span class="string">&quot;4.txt&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>修改文件名，目录也可以通过rename来操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fs.rename(<span class="string">&quot;1.txt&quot;</span>,<span class="string">&quot;5.txt&quot;</span>,<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err);</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">&quot;修改成功&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断文件是否存在</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fs.exists(<span class="string">&quot;4.txt&quot;</span>,<span class="function"><span class="keyword">function</span> (<span class="params">exists</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(exists);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="buffer缓冲区"><a href="#buffer缓冲区" class="headerlink" title="buffer缓冲区"></a>buffer缓冲区</h3></li>
+</ul>
+</li>
+<li><p>buffer的创建</p>
+<ul>
+<li>直接创建</li>
+<li>数组创建</li>
+<li>字符串创建</li>
+<li>乱码的处理</li>
+<li>buffer转换tostring</li>
+</ul>
+</li>
+</ul>
+<h3 id="stream流"><a href="#stream流" class="headerlink" title="stream流"></a>stream流</h3><ul>
+<li>stream流：流与数据处理方面密不可分<ul>
+<li>流的原理</li>
+<li>流数据的获取<ul>
+<li>pipe</li>
+<li>data</li>
+<li>end</li>
+</ul>
+</li>
+<li>copy的流方法实现</li>
+<li>加载视图的流方法实现</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/01/%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/">对象方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/对象方法//" class="article-tag-list-link color5">对象方法</a>
+        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/22/node/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2223/10/22/three/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          three
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/16/%E4%BA%A4%E4%BA%9201/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ajax01</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/">字符串方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/字符串方法//" class="article-tag-list-link color1">字符串方法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Node-js01"><span class="toc-number">1.</span> <span class="toc-text">Node.js01</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">Node.js介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="toc-number">1.2.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Node-js%E5%AE%9E%E7%8E%B0%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">使用Node.js实现第一个服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">1.4.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">1.5.</span> <span class="toc-text">npm包管理器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fs%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">fs模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#buffer%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="toc-number">2.1.</span> <span class="toc-text">buffer缓冲区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stream%E6%B5%81"><span class="toc-number">2.2.</span> <span class="toc-text">stream流</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/02/25/performance/" class="archive-article-date">
-  	<time datetime="2021-02-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/02/25/performance/">前端性能提升</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Performance//" class="article-tag-list-link color2">Performance</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2021/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2021/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -302,8 +518,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

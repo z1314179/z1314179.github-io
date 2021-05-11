@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | 两个一</title>
+  <title>react | 两个一</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zhp-blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="两个一">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="React中文手册：https:&#x2F;&#x2F;react.docschina.org&#x2F; 命令式编程 和 声明式编程 告诉计算机怎么做（How） - 过程 告诉计算机我们要什么（What） - 结果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react">
+<meta property="og:url" content="http://example.com/2021/05/11/react-test/index.html">
 <meta property="og:site_name" content="两个一">
-<meta property="og:description" content="zhp-blog">
+<meta property="og:description" content="React中文手册：https:&#x2F;&#x2F;react.docschina.org&#x2F; 命令式编程 和 声明式编程 告诉计算机怎么做（How） - 过程 告诉计算机我们要什么（What） - 结果">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-11T01:56:29.193Z">
 <meta property="article:author" content="zhp">
 <meta name="twitter:card" content="summary">
   
@@ -146,85 +148,642 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-react-test" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2223" class="archive-year">2223</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2223/10/22/three/" class="archive-article-date">
-  	<time datetime="2223-10-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2223-10-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2223/10/22/three/">three</a>
+    <h1 class="article-title" itemprop="name">
+      react
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/three-第一个3D场景//" class="article-tag-list-link color4">three 第一个3D场景</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/05/11/react-test/" class="archive-article-date">
+        
+        <a href="/2021/05/11/react-test/" class="archive-article-date">
   	<time datetime="2021-05-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/05/11/react-test/">react</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><p>中文手册：<a target="_blank" rel="noopener" href="https://react.docschina.org/">https://react.docschina.org/</a></p>
+<h2 id="命令式编程-和-声明式编程"><a href="#命令式编程-和-声明式编程" class="headerlink" title="命令式编程 和 声明式编程"></a>命令式编程 和 声明式编程</h2><ul>
+<li>告诉计算机怎么做（How） - 过程</li>
+<li>告诉计算机我们要什么（What） - 结果</li>
+</ul>
+<a id="more"></a>
+<h2 id="如何使用-React"><a href="#如何使用-React" class="headerlink" title="如何使用 React"></a>如何使用 React</h2><h3 id="基于浏览器的模式"><a href="#基于浏览器的模式" class="headerlink" title="基于浏览器的模式"></a>基于浏览器的模式</h3><ul>
+<li>React.js 提供 React.js 核心功能代码，如：虚拟 dom，组件<ul>
+<li>React.createElement(type,props,children);</li>
+</ul>
+</li>
+<li>ReactDOM 提供了与浏览器交互的 DOM 功能，如：dom 渲染<ul>
+<li>ReactDOM.render(element, container[, callback])<ul>
+<li>element：要渲染的内容</li>
+<li>container：要渲染的内容存放容器</li>
+<li>callback：渲染后的回调函数 <h3 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h3>babel-standalone.js：在浏览器中处理 JSX<br><a target="_blank" rel="noopener" href="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js">https://cdn.bootcss.com/babel-standalone/6.26.0/babel.min.js</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>JSX 是一个基于 JavaScript + XML 的一个扩展语法<br>    - 它可以作为值使用<br>    - 它并不是字符串<br>    - 它也不是HTML<br>    - 它可以配合JavaScript 表达式一起使用</p>
+<h4 id="插值表达式"><a href="#插值表达式" class="headerlink" title="插值表达式"></a>插值表达式</h4><p>在 JXS 中可以使用 {表达式} 嵌入表达式</p>
+<p>表达式：产生值的一组代码的集合</p>
+<ul>
+<li>变量</li>
+<li>算术运算</li>
+<li>函数调用</li>
+<li>……</li>
+</ul>
+<p>注意：分清楚 表达式 与 语句 的区别，if、for、while 这些都是语句，JSX 不支持语句</p>
+<h5 id="各种类型内容在插值中的使用"><a href="#各种类型内容在插值中的使用" class="headerlink" title="各种类型内容在插值中的使用"></a>各种类型内容在插值中的使用</h5><ul>
+<li>注释<br>  {/<em>注释</em>/}<pre><code>&#123;/*
+        多行注释
+*/&#125;</code></pre>
+</li>
+</ul>
+<h4 id="输出数据类型"><a href="#输出数据类型" class="headerlink" title="输出数据类型"></a>输出数据类型</h4><ul>
+<li>字符串、数字：原样输出</li>
+<li>布尔值、空、未定义 会被忽略<h4 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h4></li>
+<li>数组</li>
+<li>对象<br>扩展：虚拟 DOM （virtualDOM） 和 diff</li>
+</ul>
+<h4 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h4><ul>
+<li>三元运算符</li>
+<li>与或运算符</li>
+</ul>
+<h3 id="在属性上使用-表达式"><a href="#在属性上使用-表达式" class="headerlink" title="在属性上使用 表达式"></a>在属性上使用 表达式</h3><p>JSX 中的表达式也可以使用在属性上，但是使用的时候需要注意</p>
+<ul>
+<li>当在属性中使用 {} 的时候，不要使用引号包含</li>
+</ul>
+<h4 id="JSX-使用注意事项"><a href="#JSX-使用注意事项" class="headerlink" title="JSX 使用注意事项"></a>JSX 使用注意事项</h4><ul>
+<li>必须有,且只有一个顶层的包含元素</li>
+<li>JSX 不是html，很多属性在编写时不一样<ul>
+<li>className</li>
+<li>style </li>
+</ul>
+</li>
+<li>列表渲染时，必须有 key 值</li>
+<li>在 jsx 所有标签必须闭合</li>
+<li>组件的首字母一定大写，标签一定要小写</li>
+</ul>
+<p><strong>XSS</strong><br>为了有效的防止 XSS 注入攻击，React DOM 会在渲染的时候把内容（字符串）进行转义，所以字符串形式的标签是不会作为 HTML 标签进行处理的</p>
+<h2 id="基于自动化的集成环境模式-create-react-app-脚手架"><a href="#基于自动化的集成环境模式-create-react-app-脚手架" class="headerlink" title="基于自动化的集成环境模式 - create-react-app - 脚手架"></a>基于自动化的集成环境模式 - create-react-app - 脚手架</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>通过前面 script 的方式虽然也能完成 React.js 的开发，但是有一个现在前端很重要的特性 - 模块化，无法使用。</p>
+<p>Create React App 是一个使用 Node.js 编写的命令行工具，通过它可以帮助我们快速生成 React.js 项目，并内置了 Babel、Webpack 等工具帮助我们实现 ES6+ 解析、模块化解析打包，也就是通过它，我们可以使用 模块化 以及 ES6+ 等更新的一些特性。同时它还内置 ESLint 语法检测工具、Jest 单元测试工具。还有一个基于 Node.js 的 WebServer 帮助我们更好的在本地预览应用，其实还有更多。</p>
+<p>这些都通过 Create React App 帮助我们安装并配置好了，<strong>开箱即用</strong></p>
+<h3 id="安装与使用"><a href="#安装与使用" class="headerlink" title="安装与使用"></a>安装与使用</h3><p>通过 npm、yarn、npx 都可以</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><h6 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g create-react-app</span><br></pre></td></tr></table></figure>
+<h6 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn global add create-react-app</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>安装完成以后，即可使用 create-react-app 命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app &lt;项目名称&gt;</span><br></pre></td></tr></table></figure>
+<p>或者通过 npx 的方式</p>
+<h6 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app &lt;项目名称&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="项目目录结构说明"><a href="#项目目录结构说明" class="headerlink" title="项目目录结构说明"></a>项目目录结构说明</h3><p>运行命令以后，就会在运行命令所在目录下面创建一个以项目名称为名的目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">my-app&#x2F;</span><br><span class="line">  README.md</span><br><span class="line">  node_modules&#x2F;</span><br><span class="line">  package.json</span><br><span class="line">  public&#x2F;</span><br><span class="line">    index.html</span><br><span class="line">    favicon.ico</span><br><span class="line">  src&#x2F;</span><br><span class="line">    App.css</span><br><span class="line">    App.js</span><br><span class="line">    App.test.js</span><br><span class="line">    index.css</span><br><span class="line">    index.js</span><br><span class="line">    logo.svg</span><br></pre></td></tr></table></figure>
+<h3 id="命令脚本"><a href="#命令脚本" class="headerlink" title="命令脚本"></a>命令脚本</h3><p>create-react-app 同时也提供了其它一些命令来帮助我们进行开发</p>
+<h6 id="npm-start"><a href="#npm-start" class="headerlink" title="npm start"></a>npm start</h6><p>启动一个内置的本地 WebServer，根目录映射到 ‘./public’ 目录，默认端口：3000</p>
+<h6 id="npm-test"><a href="#npm-test" class="headerlink" title="npm test"></a>npm test</h6><p>运行 Jest 测试</p>
+<h6 id="npm-run-build"><a href="#npm-run-build" class="headerlink" title="npm run build"></a>npm run build</h6><p>打包应用（准备上线）</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>对具有一定独立功能的数据与方法的封装，对外暴露接口，有利于代码功能的复用，且不用担心冲突问题。</p>
+<h3 id="函数式组件"><a href="#函数式组件" class="headerlink" title="函数式组件"></a>函数式组件</h3><ul>
+<li>函数的名称就是组件的名称</li>
+<li>函数的返回值就是组件要渲染的内容</li>
+</ul>
+<h3 id="类式组件"><a href="#类式组件" class="headerlink" title="类式组件"></a>类式组件</h3><ul>
+<li>组件类必须继承 <strong>React.Component</strong></li>
+<li>组件类必须有 <strong>render</strong> 方法</li>
+</ul>
+<h2 id="不从实际案例开始的知识点就是耍-LM"><a href="#不从实际案例开始的知识点就是耍-LM" class="headerlink" title="不从实际案例开始的知识点就是耍 LM"></a>不从实际案例开始的知识点就是耍 LM</h2><p><strong>样式</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.friend-list</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000000</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.friend-group</span> <span class="selector-tag">dt</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(<span class="number">64</span>, <span class="number">158</span>, <span class="number">255</span>);</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.friend-group</span> <span class="selector-tag">dd</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.friend-group</span><span class="selector-class">.expanded</span> <span class="selector-tag">dd</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.friend-group</span> <span class="selector-tag">dd</span><span class="selector-class">.checked</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建-FriendList-组件"><a href="#创建-FriendList-组件" class="headerlink" title="创建 FriendList 组件"></a>创建 FriendList 组件</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FriendList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  	<span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      	<span class="keyword">return</span> (</span><br><span class="line">          	&lt;div className=<span class="string">&quot;friend-list&quot;</span>&gt;</span><br><span class="line">                &lt;div className=<span class="string">&quot;friend-group&quot;</span>&gt;</span><br><span class="line">                    &lt;dt&gt;家人&lt;/dt&gt;</span><br><span class="line">                    &lt;dd&gt;爸爸&lt;/dd&gt;</span><br><span class="line">                    &lt;dd&gt;妈妈&lt;/dd&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div className=<span class="string">&quot;friend-group&quot;</span>&gt;</span><br><span class="line">                    &lt;dt&gt;朋友&lt;/dt&gt;</span><br><span class="line">                    &lt;dd&gt;张三&lt;/dd&gt;</span><br><span class="line">                    &lt;dd&gt;李四&lt;/dd&gt;</span><br><span class="line">                    &lt;dd&gt;王五&lt;/dd&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;div className=<span class="string">&quot;friend-group&quot;</span>&gt;</span><br><span class="line">                    &lt;dt&gt;客户&lt;/dt&gt;</span><br><span class="line">                    &lt;dd&gt;阿里&lt;/dd&gt;</span><br><span class="line">                    &lt;dd&gt;腾讯&lt;/dd&gt;</span><br><span class="line">                    &lt;dd&gt;头条&lt;/dd&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="组件复用-数据抽取"><a href="#组件复用-数据抽取" class="headerlink" title="组件复用 - 数据抽取"></a>组件复用 - 数据抽取</h3><p>为了提高组件的复用性，通常会把组件中的一些可变数据提取出来</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> datas = &#123;</span><br><span class="line">    family: &#123;</span><br><span class="line">        title: <span class="string">&#x27;家人&#x27;</span>,</span><br><span class="line">        list: [</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;爸爸&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;妈妈&#x27;</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    friend: &#123;</span><br><span class="line">        title: <span class="string">&#x27;朋友&#x27;</span>,</span><br><span class="line">        list: [</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;张三&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;李四&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;王五&#x27;</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    customer: &#123;</span><br><span class="line">        title: <span class="string">&#x27;客户&#x27;</span>,</span><br><span class="line">        list: [</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;阿里&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;腾讯&#x27;</span>&#125;,</span><br><span class="line">            &#123;<span class="attr">name</span>: <span class="string">&#x27;头条&#x27;</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="props-和-state"><a href="#props-和-state" class="headerlink" title="props 和 state"></a>props 和 state</h2><ul>
+<li>props 父组件传递过来的参数</li>
+<li>state 组件自身状态<ul>
+<li>setState</li>
+<li>多个 setState 合并<h3 id="props-与-state-的区别"><a href="#props-与-state-的区别" class="headerlink" title="props 与 state 的区别"></a>props 与 state 的区别</h3>state 的主要作用是用于组件保存、控制、修改<em>自己</em>的可变状态，在组件内部进行初始化，也可以在组件内部进行修改，但是组件外部不能修改组件的 state<br>props 的主要作用是让使用该组件的父组件可以传入参数来配置该组件，它是外部传进来的配置参数，组件内部无法控制也无法修改<br>state 和 props 都可以决定组件的外观和显示状态。通常，props 做为不变数据或者初始化数据传递给组件，可变状态使用 state</li>
+</ul>
+</li>
+</ul>
+<h3 id="组件通信与数据流"><a href="#组件通信与数据流" class="headerlink" title="组件通信与数据流"></a>组件通信与数据流</h3><p>在 React.js 中，数据是从上自下流动（传递）的，也就是一个父组件可以把它的 state / props 通过 props 传递给它的子组件，但是子组件不能修改 props - React.js 是单向数据流，如果子组件需要修改父组件状态（数据），是通过回调函数方式来完成的。</p>
+<ul>
+<li>父级向子级通信</li>
+<li>子级向父级通信</li>
+</ul>
+<h3 id="React-中的事件"><a href="#React-中的事件" class="headerlink" title="React 中的事件"></a>React 中的事件</h3><ul>
+<li>大小写问题</li>
+<li>this 问题</li>
+</ul>
+<h2 id="React-组件间通信"><a href="#React-组件间通信" class="headerlink" title="React 组件间通信"></a>React 组件间通信</h2><p>在 React.js 中，数据是从上自下流动（传递）的，也就是一个父组件可以把它的 state / props 通过 props 传递给它的子组件，但是子组件不能修改 props - React.js 是单向数据流，如果子组件需要修改父组件状态（数据），是通过回调函数方式来完成的。</p>
+<ul>
+<li>父级向子级通信<br>  把数据添加子组件的属性中，然后子组件中从props属性中，获取父级传递过来的数据</li>
+<li>子级向父级通信<br>  在父级中定义相关的数据操作方法(或其他回调), 把该方法传递给子级，在子级中调用该方法父级传递消息</li>
+</ul>
+<h3 id="跨组件通信-context"><a href="#跨组件通信-context" class="headerlink" title="跨组件通信 - context"></a>跨组件通信 - context</h3><ul>
+<li>React.createContext(defaultValue);</li>
+<li>Context.Provider 在父组件调用 Provider 传递数据<ul>
+<li>value 要传递的数据</li>
+</ul>
+</li>
+<li>接收数据<ul>
+<li>class.contextType = Context;</li>
+<li>static contextType = Context;</li>
+<li>Context.Consumer</li>
+</ul>
+</li>
+</ul>
+<p><strong>注意在使用不熟练时，最好不要再项目中使用 context，context一般给第三方库使用</strong></p>
+<h2 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h2><p>所谓的生命周期就是指某个事物从开始到结束的各个阶段，当然在 React.js 中指的是组件从创建到销毁的过程，React.js 在这个过程中的不同阶段调用的函数，通过这些函数，我们可以更加精确的对组件进行控制，前面我们一直在使用的 render 函数其实就是组件生命周期渲染阶段执行的函数</p>
+<h3 id="生命周期演变"><a href="#生命周期演变" class="headerlink" title="生命周期演变"></a>生命周期演变</h3><h4 id="之前（React-16-3-之前）"><a href="#之前（React-16-3-之前）" class="headerlink" title="之前（React 16.3 之前）"></a>之前（React 16.3 之前）</h4><ul>
+<li>挂载阶段 <ul>
+<li>constructor</li>
+<li>componentWillMount</li>
+<li>render</li>
+<li>componentDidMount</li>
+</ul>
+</li>
+<li>更新阶段<ul>
+<li>父组件更新引起组件更新<ul>
+<li>componentWillReceiveProps(nextProps)</li>
+<li>shouldComponentUpdate(nextProps, nextState)</li>
+<li>componentWillUpdate(nextProps, nextState)</li>
+<li>render</li>
+<li>componentDidUpdate(prevProps, prevState)</li>
+</ul>
+</li>
+<li>组件自身更新<ul>
+<li>shouldComponentUpdate</li>
+<li>componentWillUpdate</li>
+<li>render</li>
+<li>componentDidUpdate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>卸载阶段<ul>
+<li>componentWillUnmount</li>
+</ul>
+</li>
+</ul>
+<h4 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h4><ul>
+<li><p>挂载阶段</p>
+<ul>
+<li>constructor</li>
+<li>static getDerivedStateFromProps(props, state) <ul>
+<li>注意 this 问题</li>
+</ul>
+</li>
+<li>render</li>
+<li>componentDidMount</li>
+</ul>
+</li>
+<li><p>更新阶段</p>
+<ul>
+<li>父组件更新引起组件更新<ul>
+<li>static getDerivedStateFromProps(props, state)</li>
+<li>shouldComponentUpdate()</li>
+<li>componentWillUpdate()</li>
+<li>render()</li>
+<li>getSnapshotBeforeUpdate()</li>
+<li>componentDidUpdate()</li>
+</ul>
+</li>
+<li>组件自身更新<ul>
+<li>shouldComponentUpdate()</li>
+<li>componentWillUpdate()</li>
+<li>render()</li>
+<li>getSnapshotBeforeUpdate() </li>
+<li>componentDidUpdate()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>卸载阶段</p>
+<ul>
+<li>componentWillUnmount</li>
+</ul>
+</li>
+<li><p>错误处理</p>
+<ul>
+<li>static getDerivedStateFromError() </li>
+<li>componentDidCatch(error, info)  </li>
+</ul>
+</li>
+</ul>
+<h4 id="将来"><a href="#将来" class="headerlink" title="将来"></a>将来</h4><ul>
+<li>useEffect() 副作用 (用来替代先行生命周期)</li>
+</ul>
+<p>参考：<a target="_blank" rel="noopener" href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/">http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/</a></p>
+<h3 id="生命周期函数详解"><a href="#生命周期函数详解" class="headerlink" title="生命周期函数详解"></a>生命周期函数详解</h3><h4 id="constructor-props"><a href="#constructor-props" class="headerlink" title="constructor(props)"></a>constructor(props)</h4><p>类的构造函数，也是组件初始化函数，一般情况下，我们会在这个阶段做一些初始化的工作</p>
+<ul>
+<li>初始化 state</li>
+<li>处理事件绑定函数的 this</li>
+</ul>
+<h4 id="render"><a href="#render" class="headerlink" title="render()"></a>render()</h4><p>render 方法是 Class 组件必须实现的方法</p>
+<h4 id="static-getDerivedStateFromProps-props-state"><a href="#static-getDerivedStateFromProps-props-state" class="headerlink" title="static getDerivedStateFromProps(props, state)"></a>static getDerivedStateFromProps(props, state)</h4><p>该方法会在 render 方法之前调用，无论是挂载阶段还是更新阶段，它的存在只有一个目的：让组件在 props 变化时更新 state</p>
+<h4 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a>componentDidMount()</h4><p>在组件挂载后（render 的内容插入 DOM 树中）调用。通常在这个阶段，我们可以：</p>
+<ul>
+<li>操作 DOM 节点</li>
+<li>发送请求</li>
+</ul>
+<h4 id="shouldComponentUpdate-nextProps-nextState"><a href="#shouldComponentUpdate-nextProps-nextState" class="headerlink" title="shouldComponentUpdate(nextProps, nextState)"></a>shouldComponentUpdate(nextProps, nextState)</h4><p>发生在更新阶段，getDerivedStateFromProps 之后，render 之前，该函数会返回一个布尔值，决定了后续是否执行 render，首次渲染不会调用该函数</p>
+<h4 id="getSnapshotBeforeUpdate-prevProps-prevState"><a href="#getSnapshotBeforeUpdate-prevProps-prevState" class="headerlink" title="getSnapshotBeforeUpdate(prevProps, prevState)"></a>getSnapshotBeforeUpdate(prevProps, prevState)</h4><p>该方法在 render() 之后，但是在输出到 DOM 之前执行，用来获取渲染之前的快照。当我们想在当前一次更新前获取上次的 DOM 状态，可以在这里进行处理，该函数的返回值将作为参数传递给下个生命周期函数 componentDidUpdate</p>
+<blockquote>
+<p>该函数并不常用。</p>
+</blockquote>
+<h4 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate()"></a>componentDidUpdate()</h4><p>该函数会在 DOM 更新后立即调用，首次渲染不会调用该方法。我们可以在这个函数中对渲染后的 DOM 进行操作</p>
+<h4 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount()"></a>componentWillUnmount()</h4><p>该方法会在组件卸载及销毁前调用，我们可以在这里做一些清理工作，如：组件内的定时器、未完成的请求等</p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>当渲染过程，生命周期，或子组件的构造函数中抛出错误时，会调用如下方法</p>
+<ul>
+<li>static getDerivedStateFromError()</li>
+<li>componentDidCatch()</li>
+</ul>
+<h4 id="static-getDerivedStateFromError"><a href="#static-getDerivedStateFromError" class="headerlink" title="static getDerivedStateFromError()"></a>static getDerivedStateFromError()</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> getDerivedStateFromError(error)</span><br></pre></td></tr></table></figure>
+<p>该方法用来获取子组件抛出的错误，返回值是一个对象，该对象被存储在 state 中，在后续的 render 方法中就可以根据这个对象的值来进行处理，如：显示不同的 UI</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ErrorBoundary</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="title">constructor</span>(<span class="params">props</span>)</span> &#123;</span><br><span class="line">      <span class="built_in">super</span>(props);</span><br><span class="line">      <span class="built_in">this</span>.state = &#123; <span class="attr">hasError</span>: <span class="literal">false</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="function"><span class="title">getDerivedStateFromError</span>(<span class="params">error</span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">hasError</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">this</span>.state.hasError) &#123;</span><br><span class="line">        	<span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>出错了<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">this</span>.props.children;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="componentDidCatch-将来版本会有变化"><a href="#componentDidCatch-将来版本会有变化" class="headerlink" title="componentDidCatch() // 将来版本会有变化"></a>componentDidCatch() // 将来版本会有变化</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentDidCatch(error, info)</span><br></pre></td></tr></table></figure>
+<p>该方法与 getDerivedStateFromError() 类似，但是也有不同的地方：</p>
+<ul>
+<li>该方法会有一个记录详细错误堆栈信息的 info 参数</li>
+<li>该方法可以执行一些额外的操作：打印错误、上报错误信息……</li>
+</ul>
+<h3 id="扩展-PureComponent"><a href="#扩展-PureComponent" class="headerlink" title="扩展 PureComponent"></a>扩展 PureComponent</h3><p>PureComponent 提供了一个具有浅比较的 shouldComponentUpdate 方法,其他和 Component 完全一直</p>
+<h2 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h2><p>非受控组件: 我们不需要同步 value 值(defaultValue，defaultChecked)</p>
+<h2 id="React-相关API"><a href="#React-相关API" class="headerlink" title="React 相关API"></a>React 相关API</h2><h3 id="PureComponent"><a href="#PureComponent" class="headerlink" title="PureComponent"></a>PureComponent</h3><p>PureComponent 提供了一个具有浅比较的 shouldComponentUpdate 方法,其他和 Component 完全一直</p>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><ul>
+<li>旧版 - string ref</li>
+<li>主流 - createRef()</li>
+<li>注意：在 组件挂载完成之后及更新之后使用</li>
+</ul>
+<h3 id="children"><a href="#children" class="headerlink" title="children"></a>children</h3><ul>
+<li>组件标签对之间的内容会被当做一个特殊的属性 props.children 传入组件内容</li>
+<li>可以自定义结构的组件的常用形式<ul>
+<li>children</li>
+<li>传递函数</li>
+<li>传递子组件</li>
+<li>示例：弹窗组件<h3 id="dangerouslySetInnerHTML"><a href="#dangerouslySetInnerHTML" class="headerlink" title="dangerouslySetInnerHTML"></a>dangerouslySetInnerHTML</h3>dangerouslySetInnerHTML 在 react 元素内写入 innerHTML</li>
+</ul>
+</li>
+</ul>
+<h2 id="实战-todoList"><a href="#实战-todoList" class="headerlink" title="实战 - todoList"></a>实战 - todoList</h2><h2 id="函数式组件-1"><a href="#函数式组件-1" class="headerlink" title="函数式组件"></a>函数式组件</h2><p>函数式组件中，没有 state 和 生命周期，所以又被称为 无状态组件，在早期 react 版本中，被当前纯渲染组件来用</p>
+<h2 id="React-hooks"><a href="#React-hooks" class="headerlink" title="React hooks"></a>React hooks</h2><p>React hooks 是React 16.8中的新增功能。它们使您无需编写类即可使用状态和其他React功能<br>参考：<a target="_blank" rel="noopener" href="https://reactjs.org/docs/hooks-intro.html">https://reactjs.org/docs/hooks-intro.html</a></p>
+<h3 id="React-Hooks-优势"><a href="#React-Hooks-优势" class="headerlink" title="React Hooks 优势"></a>React Hooks 优势</h3><ul>
+<li>简化组件逻辑</li>
+<li>复用状态逻辑</li>
+<li>无需使用类组件编写</li>
+</ul>
+<h3 id="常用-hook"><a href="#常用-hook" class="headerlink" title="常用 hook"></a>常用 hook</h3><ul>
+<li>useState<br>  <code>const [state, setState] = useState(initialState);</code></li>
+<li>useEffect<br>  类组件<pre><code>  componentDidMount、componentDidUpdate 和 componentWillUnmount</code></pre>
+  需要清除的副作用    </li>
+<li>useRef</li>
+</ul>
+<h3 id="Hook-使用规则"><a href="#Hook-使用规则" class="headerlink" title="Hook 使用规则"></a>Hook 使用规则</h3><ul>
+<li>只在最顶层使用 Hook</li>
+<li>只在 React 函数中调用 Hook<ul>
+<li>React 函数组件中</li>
+<li>React Hook 中</li>
+</ul>
+</li>
+</ul>
+<h2 id="函数式组件-2"><a href="#函数式组件-2" class="headerlink" title="函数式组件"></a>函数式组件</h2><ul>
+<li>函数式组件，本质就是一个常规函数，接收一个参数 props 并返回一个 reactElement</li>
+<li>函数式组件中没有this和生命周期函数,不能使用 string ref</li>
+<li>使用函数式组件时，应该尽量减少在函数中声明子函数，否则，组件每次更新时都会重新创建这个函数</li>
+</ul>
+<h2 id="React-hooks-钩子"><a href="#React-hooks-钩子" class="headerlink" title="React hooks(钩子)"></a>React hooks(钩子)</h2><p>React hooks 是React 16.8中的新增功能。它们使您无需编写类即可使用状态和其他React功能<br>参考：<a target="_blank" rel="noopener" href="https://reactjs.org/docs/hooks-intro.html">https://reactjs.org/docs/hooks-intro.html</a></p>
+<h3 id="React-Hooks-优势-1"><a href="#React-Hooks-优势-1" class="headerlink" title="React Hooks 优势"></a>React Hooks 优势</h3><ul>
+<li>简化组件逻辑</li>
+<li>复用状态逻辑</li>
+<li>无需使用类组件编写</li>
+</ul>
+<h3 id="常用-hook-1"><a href="#常用-hook-1" class="headerlink" title="常用 hook"></a>常用 hook</h3><ul>
+<li>useState<br>  <code>const [state, setState] = useState(initialState);</code></li>
+<li>useEffect<br>  类组件<pre><code>  componentDidMount、componentDidUpdate 和 componentWillUnmount</code></pre>
+  需要清除的副作用    </li>
+<li>useRef</li>
+<li>扩展 useMemo</li>
+</ul>
+<h3 id="Hook-使用规则-1"><a href="#Hook-使用规则-1" class="headerlink" title="Hook 使用规则"></a>Hook 使用规则</h3><ul>
+<li>只在 React 函数中调用 Hook<ul>
+<li>React 函数组件中</li>
+<li>React Hook 中</li>
+</ul>
+</li>
+<li>只在最顶层使用 Hook    </li>
+</ul>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="路由-1"><a href="#路由-1" class="headerlink" title="路由"></a>路由</h3><p>当应用变得复杂的时候，就需要分块的进行处理和展示，传统模式下，我们是把整个应用分成了多个页面，然后通过 URL 进行连接。但是这种方式也有一些问题，每次切换页面都需要重新发送所有请求和渲染整个页面，不止性能上会有影响，同时也会导致整个 JavaScript 重新执行，丢失状态。</p>
+<h3 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h3><p>Single Page Application : 单页面应用，整个应用只加载一个页面（入口页面），后续在与用户的交互过程中，通过 DOM 操作在这个单页上动态生成结构和内容</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>有更好的用户体验（减少请求和渲染和页面跳转产生的等待与空白），页面切换快</li>
+<li>重前端，数据和页面内容由异步请求（AJAX）+ DOM 操作来完成，前端处理更多的业务逻辑</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>首屏处理慢</li>
+<li>不利于 SEO</li>
+</ul>
+<h3 id="SPA-的页面切换机制"><a href="#SPA-的页面切换机制" class="headerlink" title="SPA 的页面切换机制"></a>SPA 的页面切换机制</h3><p>虽然 SPA 的内容都是在一个页面通过 JavaScript 动态处理的，但是还是需要根据需求在不同的情况下分内容展示，如果仅仅只是依靠 JavaScript 内部机制去判断，逻辑会变得过于复杂，通过把 JavaScript 与 URL 进行结合的方式：JavaScript 根据 URL  的变化，来处理不同的逻辑，交互过程中只需要改变 URL 即可。这样把不同 URL 与 JavaScript 对应的逻辑进行关联的方式就是路由，其本质上与后端路由的思想是一样的。</p>
+<h4 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h4><p>前端路由只是改变了 URL 或 URL 中的某一部分，但一定不会直接发送请求，可以认为仅仅只是改变了浏览器地址栏上的 URL 而已，JavaScript 通过各种手段处理这种 URL 的变化，然后通过 DOM 操作动态的改变当前页面的结构</p>
+<ul>
+<li>URL 的变化不会直接发送 HTTP 请求</li>
+<li>业务逻辑由前端 JavaScript 来完成</li>
+</ul>
+<p>目前前端路由主要的模式：</p>
+<ul>
+<li>基于 URL Hash 的路由</li>
+<li>基于 HTML5 History API 的路由<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/History_API">https://developer.mozilla.org/zh-CN/docs/Web/API/History_API</a></li>
+</ul>
+<h2 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a>React Router</h2><p>理解了路由基本机制以后，也不需要重复造轮子，我们可以直接使用 React Router 库</p>
+<p><a target="_blank" rel="noopener" href="https://reacttraining.com/react-router/">https://reacttraining.com/react-router/</a></p>
+<p>React Router 提供了多种不同环境下的路由库</p>
+<ul>
+<li>web</li>
+<li>native</li>
+</ul>
+<h3 id="基于-Web-的-React-Router"><a href="#基于-Web-的-React-Router" class="headerlink" title="基于 Web 的 React Router"></a>基于 Web 的 React Router</h3><p>基于 web 的 React Router 为：react-router-dom</p>
+<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -S react-router-dom</span><br></pre></td></tr></table></figure>
+<h4 id="概览"><a href="#概览" class="headerlink" title="概览"></a>概览</h4><p>react-router-dom 的核心是组件，它提供了一系列的组件，如：</p>
+<ul>
+<li>Router 组件</li>
+<li>BrowserRouter 组件</li>
+<li>HashRouter 组件</li>
+<li>Route 组件</li>
+<li>Link 组件</li>
+<li>NavLink 组件</li>
+<li>Switch 组件</li>
+<li>Redirect 组件</li>
+</ul>
+<p>以及其它一些 API，来完成路由的功能</p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>假设当前应用有两个页面，对应的 URL 与 页面关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;				:	首页</span><br><span class="line">&#x2F;about	:	关于我们</span><br></pre></td></tr></table></figure>
+<h4 id="Router-组件"><a href="#Router-组件" class="headerlink" title="Router 组件"></a>Router 组件</h4><p>如果我们希望页面中某个部分的内容需要根据 URL 来动态显示，需要用到 Router 组件 ，该组件是一个容器组件，只需要用它包裹 URL 对应的根组件即可</p>
+<p>react-router-dom 为我们提供了几个基于不同模式的 router 子组件</p>
+<h5 id="BrowserRouter-组件"><a href="#BrowserRouter-组件" class="headerlink" title="BrowserRouter 组件"></a>BrowserRouter 组件</h5><p>基于 HTML5 History API 的路由组件</p>
+<h5 id="HashRouter-组件"><a href="#HashRouter-组件" class="headerlink" title="HashRouter 组件"></a>HashRouter 组件</h5><p>基于 URL Hash 的路由组件</p>
+<h4 id="Route-组件"><a href="#Route-组件" class="headerlink" title="Route 组件"></a>Route 组件</h4><p>通过该组件来设置应用单个路由信息，Route 组件所在的区域就是就是当 URL 与当前 Route 设置的 path 属性匹配的时候，后面 component 将要显示的区域</p>
+<h5 id="exact"><a href="#exact" class="headerlink" title="exact"></a>exact</h5><p>exact 属性表示路由使用 精确匹配模式，非 exact 模式下 ‘/‘ 匹配所有以 ‘/‘ 开头的路由</p>
+<h4 id="Link-组件"><a href="#Link-组件" class="headerlink" title="Link 组件"></a>Link 组件</h4><p>Link 组件用来处理 a 链接 类似的功能（它会在页面中生成一个 a 标签），但设置这里需要注意的，react-router-dom 拦截了实际 a 标签的默认动作，然后根据所有使用的路由模式（Hash 或者 HTML5）来进行处理，改变了 URL，但不会发生请求，同时根据 Route 中的设置把对应的组件显示在指定的位置</p>
+<h5 id="to-属性"><a href="#to-属性" class="headerlink" title="to 属性"></a>to 属性</h5><p>to 属性类似 a 标签中的 href</p>
+<h3 id="传递-props"><a href="#传递-props" class="headerlink" title="传递 props"></a>传递 props</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path=<span class="string">&#x27;/&#x27;</span> component=&#123;Home&#125;</span><br></pre></td></tr></table></figure>
+<p>如果 Route 使用的是 component 来指定组件，那么不能使用 props</p>
+<h6 id="Route-render"><a href="#Route-render" class="headerlink" title="Route : render"></a>Route : render</h6><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path=<span class="string">&#x27;/&#x27;</span> render=&#123;<span class="function">() =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Home</span> <span class="attr">items</span>=<span class="string">&#123;this.state.items&#125;</span> /&gt;</span></span>&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>通过 render 属性来指定渲染函数，render 属性值是一个函数，当路由匹配的时候指定该函数进行渲染</p>
+<h4 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h4><p>为了能给处理上面的动态路由地址的访问，我们需要为 Route 组件配置特殊的 path</p>
+<h4 id="NavLink-组件"><a href="#NavLink-组件" class="headerlink" title="NavLink 组件"></a>NavLink 组件</h4><p>NavLink 与 Link 类似，但是它提供了两个特殊属性用来处理页面导航</p>
+<h5 id="activeStyle"><a href="#activeStyle" class="headerlink" title="activeStyle"></a>activeStyle</h5><p>当当前 URL 与 NavLink 中的 to 匹配的时候，激活 activeStyle 中的样式</p>
+<h5 id="activeClassName"><a href="#activeClassName" class="headerlink" title="activeClassName"></a>activeClassName</h5><p>与 activeStyle 类似，但是激活的是 className</p>
+<h5 id="isActive"><a href="#isActive" class="headerlink" title="isActive"></a>isActive</h5><p>默认情况下，匹配的是 URL 与 to 的设置，通过 isActive 可以自定义激活逻辑，isActive 是一个函数，返回布尔值</p>
+<h4 id="Switch-组件"><a href="#Switch-组件" class="headerlink" title="Switch 组件"></a>Switch 组件</h4><p>该组件只会渲染首个被匹配的组件</p>
+<h4 id="Redirect-组件"><a href="#Redirect-组件" class="headerlink" title="Redirect 组件"></a>Redirect 组件</h4><h5 id="to"><a href="#to" class="headerlink" title="to"></a>to</h5><p>设置跳转的 URL</p>
+<h4 id="withRouter-组件"><a href="#withRouter-组件" class="headerlink" title="withRouter 组件"></a>withRouter 组件</h4><p>如果一个组件不是路由绑定组件，那么该组件的 props 中是没有路由相关对象的，虽然我们可以通过传参的方式传入，但是如果结构复杂，这样做会特别的繁琐。幸好，我们可以通过 withRouter 方法来注入路由对象</p>
+<h1 id="react-官网"><a href="#react-官网" class="headerlink" title="react 官网"></a>react 官网</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://reactjs.org/">https://reactjs.org/</a></li>
+</ul>
+<h2 id="路由-2"><a href="#路由-2" class="headerlink" title="路由"></a>路由</h2><h3 id="路由-3"><a href="#路由-3" class="headerlink" title="路由"></a>路由</h3><p>当应用变得复杂的时候，就需要分块的进行处理和展示，传统模式下，我们是把整个应用分成了多个页面，然后通过 URL 进行连接。但是这种方式也有一些问题，每次切换页面都需要重新发送所有请求和渲染整个页面，不止性能上会有影响，同时也会导致整个 JavaScript 重新执行，丢失状态。</p>
+<h3 id="SPA-1"><a href="#SPA-1" class="headerlink" title="SPA"></a>SPA</h3><p>Single Page Application : 单页面应用，整个应用只加载一个页面（入口页面），后续在与用户的交互过程中，通过 DOM 操作在这个单页上动态生成结构和内容</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>有更好的用户体验（减少请求和渲染和页面跳转产生的等待与空白），页面切换快</li>
+<li>重前端，数据和页面内容由异步请求（AJAX）+ DOM 操作来完成，前端处理更多的业务逻辑</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>首屏处理慢</li>
+<li>不利于 SEO</li>
+</ul>
+<h3 id="SPA-的页面切换机制-1"><a href="#SPA-的页面切换机制-1" class="headerlink" title="SPA 的页面切换机制"></a>SPA 的页面切换机制</h3><p>虽然 SPA 的内容都是在一个页面通过 JavaScript 动态处理的，但是还是需要根据需求在不同的情况下分内容展示，如果仅仅只是依靠 JavaScript 内部机制去判断，逻辑会变得过于复杂，通过把 JavaScript 与 URL 进行结合的方式：JavaScript 根据 URL  的变化，来处理不同的逻辑，交互过程中只需要改变 URL 即可。这样把不同 URL 与 JavaScript 对应的逻辑进行关联的方式就是路由，其本质上与后端路由的思想是一样的。</p>
+<h4 id="前端路由-1"><a href="#前端路由-1" class="headerlink" title="前端路由"></a>前端路由</h4><p>前端路由只是改变了 URL 或 URL 中的某一部分，但一定不会直接发送请求，可以认为仅仅只是改变了浏览器地址栏上的 URL 而已，JavaScript 通过各种手段处理这种 URL 的变化，然后通过 DOM 操作动态的改变当前页面的结构</p>
+<ul>
+<li>URL 的变化不会直接发送 HTTP 请求</li>
+<li>业务逻辑由前端 JavaScript 来完成</li>
+</ul>
+<p>目前前端路由主要的模式：</p>
+<ul>
+<li>基于 URL Hash 的路由</li>
+<li>基于 HTML5 History API 的路由<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/History_API">https://developer.mozilla.org/zh-CN/docs/Web/API/History_API</a></li>
+</ul>
+<h2 id="React-Router-1"><a href="#React-Router-1" class="headerlink" title="React Router"></a>React Router</h2><p>理解了路由基本机制以后，也不需要重复造轮子，我们可以直接使用 React Router 库<br><a target="_blank" rel="noopener" href="https://reacttraining.com/react-router/">https://reacttraining.com/react-router/</a><br>React Router 提供了多种不同环境下的路由库</p>
+<ul>
+<li>web</li>
+<li>native<h3 id="基于-Web-的-React-Router-1"><a href="#基于-Web-的-React-Router-1" class="headerlink" title="基于 Web 的 React Router"></a>基于 Web 的 React Router</h3></li>
+</ul>
+<p>基于 web 的 React Router 为：react-router-dom</p>
+<h4 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -S react-router-dom</span><br></pre></td></tr></table></figure>
+<h4 id="概览-1"><a href="#概览-1" class="headerlink" title="概览"></a>概览</h4><p>react-router-dom 的核心是组件，它提供了一系列的组件，如：</p>
+<ul>
+<li>Router 组件<ul>
+<li>BrowserRouter 组件</li>
+<li>HashRouter 组件</li>
+</ul>
+</li>
+<li>Route 组件</li>
+<li>Link 组件 </li>
+<li>NavLink 组件</li>
+<li>Switch 组件</li>
+<li>Redirect 组件</li>
+</ul>
+<p>以及其它一些 API，来完成路由的功能</p>
+<h2 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h2><h4 id="Router-组件-1"><a href="#Router-组件-1" class="headerlink" title="Router 组件"></a>Router 组件</h4><p>如果我们希望页面中某个部分的内容需要根据 URL 来动态显示，需要用到 Router 组件 ，该组件是一个容器组件，只需要用它包裹 URL 对应的根组件即可</p>
+<p>react-router-dom 为我们提供了几个基于不同模式的 router 子组件</p>
+<h5 id="BrowserRouter-组件-1"><a href="#BrowserRouter-组件-1" class="headerlink" title="BrowserRouter 组件"></a>BrowserRouter 组件</h5><p>基于 HTML5 History API 的路由组件</p>
+<h5 id="HashRouter-组件-1"><a href="#HashRouter-组件-1" class="headerlink" title="HashRouter 组件"></a>HashRouter 组件</h5><p>基于 URL Hash 的路由组件</p>
+<h4 id="Route-组件-1"><a href="#Route-组件-1" class="headerlink" title="Route 组件"></a>Route 组件</h4><p>通过该组件来设置应用单个路由信息，Route 组件所在的区域就是就是当 URL 与当前 Route 设置的 path 属性匹配的时候，后面 component 将要显示的区域</p>
+<h5 id="exact-1"><a href="#exact-1" class="headerlink" title="exact"></a>exact</h5><p>exact 属性表示路由使用 精确匹配模式，非 exact 模式下 ‘/‘ 匹配所有以 ‘/‘ 开头的路由</p>
+<h4 id="Link-组件-1"><a href="#Link-组件-1" class="headerlink" title="Link 组件"></a>Link 组件</h4><p>Link 组件用来处理 a 链接 类似的功能（它会在页面中生成一个 a 标签），但设置这里需要注意的，react-router-dom 拦截了实际 a 标签的默认动作，然后根据所有使用的路由模式（Hash 或者 HTML5）来进行处理，改变了 URL，但不会发生请求，同时根据 Route 中的设置把对应的组件显示在指定的位置</p>
+<h5 id="to-属性-1"><a href="#to-属性-1" class="headerlink" title="to 属性"></a>to 属性</h5><p>to 属性类似 a 标签中的 href</p>
+<h3 id="传递-props-1"><a href="#传递-props-1" class="headerlink" title="传递 props"></a>传递 props</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path=<span class="string">&#x27;/&#x27;</span> component=&#123;Home&#125;</span><br></pre></td></tr></table></figure>
+<p>如果 Route 使用的是 component 来指定组件，那么不能使用 props</p>
+<h6 id="Route-render-1"><a href="#Route-render-1" class="headerlink" title="Route : render"></a>Route : render</h6><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route exact path=<span class="string">&#x27;/&#x27;</span> render=&#123;<span class="function">() =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Home</span> <span class="attr">items</span>=<span class="string">&#123;this.state.items&#125;</span> /&gt;</span></span>&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>通过 render 属性来指定渲染函数，render 属性值是一个函数，当路由匹配的时候指定该函数进行渲染</p>
+<h4 id="动态路由-1"><a href="#动态路由-1" class="headerlink" title="动态路由"></a>动态路由</h4><p>为了能给处理上面的动态路由地址的访问，我们需要为 Route 组件配置特殊的 path</p>
+<h4 id="NavLink-组件-1"><a href="#NavLink-组件-1" class="headerlink" title="NavLink 组件"></a>NavLink 组件</h4><p>NavLink 与 Link 类似，但是它提供了两个特殊属性用来处理页面导航</p>
+<h5 id="activeStyle-1"><a href="#activeStyle-1" class="headerlink" title="activeStyle"></a>activeStyle</h5><p>当当前 URL 与 NavLink 中的 to 匹配的时候，激活 activeStyle 中的样式</p>
+<h5 id="activeClassName-1"><a href="#activeClassName-1" class="headerlink" title="activeClassName"></a>activeClassName</h5><p>与 activeStyle 类似，但是激活的是 className</p>
+<h5 id="isActive-1"><a href="#isActive-1" class="headerlink" title="isActive"></a>isActive</h5><p>默认情况下，匹配的是 URL 与 to 的设置，通过 isActive 可以自定义激活逻辑，isActive 是一个函数，返回布尔值</p>
+<h4 id="Switch-组件-1"><a href="#Switch-组件-1" class="headerlink" title="Switch 组件"></a>Switch 组件</h4><p>该组件只会渲染首个被匹配的组件</p>
+<h4 id="Redirect-组件-1"><a href="#Redirect-组件-1" class="headerlink" title="Redirect 组件"></a>Redirect 组件</h4><h5 id="to-1"><a href="#to-1" class="headerlink" title="to"></a>to</h5><p>设置跳转的 URL</p>
+<h4 id="withRouter-组件-1"><a href="#withRouter-组件-1" class="headerlink" title="withRouter 组件"></a>withRouter 组件</h4><p>如果一个组件不是路由绑定组件，那么该组件的 props 中是没有路由相关对象的，虽然我们可以通过传参的方式传入，但是如果结构复杂，这样做会特别的繁琐。幸好，我们可以通过 withRouter 方法来注入路由对象</p>
+<h2 id="hooks-router5之后"><a href="#hooks-router5之后" class="headerlink" title="hooks (router5之后)"></a>hooks (router5之后)</h2><ul>
+<li>useHistory</li>
+<li>useLocation</li>
+<li>useParams</li>
+<li>useRouteMatch</li>
+</ul>
+<h1 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h1><ul>
+<li>Redux 是一个独立的 JavaScript 状态管理库，与非 React 内容之一</li>
+<li><a target="_blank" rel="noopener" href="https://www.redux.org.cn/">https://www.redux.org.cn/</a></li>
+</ul>
+<h2 id="为什么使用-redux"><a href="#为什么使用-redux" class="headerlink" title="为什么使用 redux"></a>为什么使用 redux</h2><p>React 本身 MVVM 渐进式框架(M(model 数据模型) - V(view 视图) - VM(虚拟模型))</p>
+<h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><p>理解 Redux 核心几个概念与它们之间的关系</p>
+<ul>
+<li>state</li>
+<li>reducer</li>
+<li>store</li>
+<li>action</li>
+</ul>
+<h4 id="state-对象"><a href="#state-对象" class="headerlink" title="state 对象"></a>state 对象</h4><p>通常我们会把应用中的数据存储到一个对象树（Object Tree） 中进行统一管理，我们把这个对象树称为：state</p>
+<h5 id="state-是只读的"><a href="#state-是只读的" class="headerlink" title="state 是只读的"></a>state 是只读的</h5><p>这里需要注意的是，为了保证数据状态的可维护和测试，不推荐直接修改 state 中的原数据</p>
+<h5 id="通过纯函数修改-state"><a href="#通过纯函数修改-state" class="headerlink" title="通过纯函数修改 state"></a>通过纯函数修改 state</h5><p>什么是纯函数？</p>
+<h6 id="纯函数"><a href="#纯函数" class="headerlink" title="纯函数"></a>纯函数</h6><ol>
+<li>相同的输入永远返回相同的输出</li>
+<li>不修改函数的输入值</li>
+<li>不依赖外部环境状态</li>
+<li>无任何副作用</li>
+</ol>
+<p>使用纯函数的好处</p>
+<ol>
+<li>便于测试</li>
+<li>有利重构</li>
+</ol>
+<h4 id="action-对象"><a href="#action-对象" class="headerlink" title="action 对象"></a>action 对象</h4><p>我们对 state 的修改是通过 reducer 纯函数来进行的，同时通过传入的 action 来执行具体的操作，action 是一个对象</p>
+<ul>
+<li>type 属性 : 表示要进行操作的动作类型，增删改查……</li>
+<li>payload属性 : 操作 state 的同时传入的数据</li>
+</ul>
+<p>但是这里需要注意的是，我们不直接去调用 Reducer 函数，而是通过 Store 对象提供的 dispatch 方法来调用</p>
+<h4 id="Store-对象"><a href="#Store-对象" class="headerlink" title="Store 对象"></a>Store 对象</h4><p>为了对 state，Reducer，action 进行统一管理和维护，我们需要创建一个 Store 对象</p>
+<h2 id="redux-三大原则"><a href="#redux-三大原则" class="headerlink" title="redux 三大原则"></a>redux 三大原则</h2><ul>
+<li>单一数据源: 整个应用的 state 被储存在一棵 object tree 中，并且这个 object tree 只存在于唯一一个 store 中</li>
+<li>State 是只读的: 唯一改变 state 的方法就是触发 action，action 是一个用于描述已发生事件的普通对象</li>
+<li>使用纯函数来执行修改</li>
+</ul>
+<h2 id="redux-API"><a href="#redux-API" class="headerlink" title="redux API"></a>redux API</h2><ul>
+<li><p>createStore(reducer, [preloadedState], enhancer); </p>
+<ul>
+<li>reducer (Function): 接收两个参数，分别是当前的 state 树和要处理的 action，返回新的 state 树。</li>
+<li>[preloadedState] (any): 初始时的 state。 在同构应用中，你可以决定是否把服务端传来的 state 水合（hydrate）后传给它，或者从之前保存的用户会话中恢复一个传给它。如果你使用 combineReducers 创建 - reducer，它必须是一个普通对象，与传入的 keys 保持同样的结构。否则，你可以自由传入任何 reducer 可理解的内容。</li>
+<li>enhancer (Function): Store enhancer 是一个组合 store creator 的高阶函数，返回一个新的强化过的 store creator。这与 middleware 相似，它也允许你通过复合函数改变 store 接口。</li>
+<li>返回值 (Store): 保存了应用所有 state 的对象。改变 state 的惟一方法是 dispatch action。你也可以 subscribe 监听 state 的变化，然后更新 UI。</li>
+</ul>
+</li>
+<li><p>reducer </p>
+<ul>
+<li>reducer(state,action)</li>
+</ul>
+</li>
+<li><p>Store </p>
+<ul>
+<li>getState()</li>
+<li>dispatch(action)</li>
+<li>subscribe(listener)</li>
+<li>replaceReducer(nextReducer)</li>
+</ul>
+</li>
+<li><p>combineReducers(reducers)<br>  将 reducer 函数拆分成多个单独的函数，拆分后的每个函数负责独立管理 state 的一部分</p>
+</li>
+<li><p>applyMiddleware(…middlewares) 中间件</p>
+</li>
+</ul>
+<h2 id="react-redux"><a href="#react-redux" class="headerlink" title="react-redux"></a>react-redux</h2><ul>
+<li><Provider store></Provider></li>
+<li>connect();</li>
+</ul>
+<h2 id="异步操作中间件"><a href="#异步操作中间件" class="headerlink" title="异步操作中间件"></a>异步操作中间件</h2><ul>
+<li>redux-thunk</li>
+</ul>
+<h2 id="复杂数据下-reducer-的拆分"><a href="#复杂数据下-reducer-的拆分" class="headerlink" title="复杂数据下 reducer 的拆分"></a>复杂数据下 reducer 的拆分</h2><ul>
+<li>combineReducers(reducers)</li>
+</ul>
+<h2 id="react-redux-hooks"><a href="#react-redux-hooks" class="headerlink" title="react-redux hooks"></a>react-redux hooks</h2><ul>
+<li>useSelector(fn)</li>
+<li>useDispatch()</li>
+<li>useStore()</li>
+</ul>
+<h3 id="redux-中间件"><a href="#redux-中间件" class="headerlink" title="redux 中间件"></a>redux 中间件</h3><ul>
+<li>中间件的概念: 在真正去修改 reducer 之前，做一些处理，比如我们的副作用，如：数据请求，数据验证……</li>
+<li>applyMiddleware</li>
+<li>redux-thunk</li>
+</ul>
+<h2 id="搭建自己的-React-项目-CNode"><a href="#搭建自己的-React-项目-CNode" class="headerlink" title="搭建自己的 React 项目 - CNode"></a>搭建自己的 React 项目 - CNode</h2><h3 id="antd-使用"><a href="#antd-使用" class="headerlink" title="antd 使用"></a>antd 使用</h3><h4 id="安装-antd"><a href="#安装-antd" class="headerlink" title="安装 antd"></a>安装 antd</h4><ul>
+<li><code>yarn add antd</code></li>
+<li><code>npm i antd</code></li>
+</ul>
+<p>使用：<br> <code>@import &#39;~antd/dist/antd.css&#39;;</code></p>
+<h4 id="高级配置-按需加载-antd-的样式"><a href="#高级配置-按需加载-antd-的样式" class="headerlink" title="高级配置 - (按需加载 antd 的样式)"></a>高级配置 - (按需加载 antd 的样式)</h4><h5 id="react-app-rewired-一个对-create-react-app-进行自定义配置的社区解决方案"><a href="#react-app-rewired-一个对-create-react-app-进行自定义配置的社区解决方案" class="headerlink" title="react-app-rewired (一个对 create-react-app 进行自定义配置的社区解决方案)"></a>react-app-rewired (一个对 create-react-app 进行自定义配置的社区解决方案)</h5><ul>
+<li><p>安装 <code>yarn add react-app-rewired customize-cra</code></p>
+</li>
+<li><p>修改 package.json</p>
+</li>
+</ul>
+<p><code>/* package.json */     &quot;scripts&quot;: &#123;     -   &quot;start&quot;: &quot;react-scripts start&quot;,     +   &quot;start&quot;: &quot;react-app-rewired start&quot;,     -   &quot;build&quot;: &quot;react-scripts build&quot;,     +   &quot;build&quot;: &quot;react-app-rewired build&quot;,     -   &quot;test&quot;: &quot;react-scripts test&quot;,     +   &quot;test&quot;: &quot;react-app-rewired test&quot;,     &#125;</code></p>
+<ul>
+<li><p>安装 babel-plugin-import</p>
+<p><code>yarn add babel-plugin-import</code></p>
+</li>
+<li><p>新建 config-overrides.js 文件 (用来修改 默认的配置)<br><code>  module.exports = function override(config, env) &#123;   // do stuff with the webpack config...   return config;   &#125;;</code></p>
+</li>
+<li><p>修改 config-overrides.js 的配置</p>
+</li>
+</ul>
+<p><code>    + const &#123; override, fixBabelImports &#125; = require(&#39;customize-cra&#39;);     - module.exports = function override(config, env) &#123;     -   // do stuff with the webpack config...     -   return config;     - &#125;;     + module.exports = override(     +   fixBabelImports(&#39;import&#39;, &#123;     +     libraryName: &#39;antd&#39;,     +     libraryDirectory: &#39;es&#39;,     +     style: &#39;css&#39;,     +   &#125;),     + );</code></p>
+<h3 id="定制主题"><a href="#定制主题" class="headerlink" title="定制主题"></a>定制主题</h3><ul>
+<li>添加 less-loader</li>
+</ul>
+<p><code>yarn add less less-loader</code></p>
+<ul>
+<li><p>配置 config-overrides.js<br>`</p>
+<ul>
+<li>const { override, fixBabelImports } = require(‘customize-cra’);</li>
+</ul>
+<ul>
+<li><p>const { override, fixBabelImports, addLessLoader } = require(‘customize-cra’);</p>
+<p>module.exports = override(<br>fixBabelImports(‘import’, {<br>  libraryName: ‘antd’,<br>  libraryDirectory: ‘es’,</p>
+</li>
+</ul>
+<ul>
+<li>  style: ‘css’,</li>
+</ul>
+<ul>
+<li>style: true,<br>}),</li>
+<li>addLessLoader({</li>
+<li>  javascriptEnabled: true,</li>
+<li>  modifyVars: { ‘@primary-color’: ‘#1DA57A’ },</li>
+<li>}),<br>);<br>`<h3 id="开始搭建-CNode"><a href="#开始搭建-CNode" class="headerlink" title="开始搭建 CNode"></a>开始搭建 CNode</h3></li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://cnodejs.org/api/v1/topics?page=1&amp;tab=all&amp;limit=10">https://cnodejs.org/api/v1/topics?page=1&amp;tab=all&amp;limit=10</a></p>
+<h2 id="移动端事件"><a href="#移动端事件" class="headerlink" title="移动端事件"></a>移动端事件</h2><ul>
+<li>touch事件和touchEvent</li>
+<li>事件点透处理</li>
+<li>滑屏幻灯片实现</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -237,324 +796,125 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/05/11/react-test/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/20/canvas/" class="archive-article-date">
-  	<time datetime="2021-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2223/10/22/three/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          three
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/04/20/canvas/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">canvas</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/20/canvas/">canvas</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/canvas//" class="article-tag-list-link color2">canvas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React"><span class="toc-number">1.</span> <span class="toc-text">React</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%BC%8F%E7%BC%96%E7%A8%8B-%E5%92%8C-%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">命令式编程 和 声明式编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-React"><span class="toc-number">3.</span> <span class="toc-text">如何使用 React</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.1.</span> <span class="toc-text">基于浏览器的模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#babel"><span class="toc-number">3.2.</span> <span class="toc-text">babel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSX"><span class="toc-number">3.3.</span> <span class="toc-text">JSX</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.3.1.</span> <span class="toc-text">插值表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B%E5%86%85%E5%AE%B9%E5%9C%A8%E6%8F%92%E5%80%BC%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.3.1.1.</span> <span class="toc-text">各种类型内容在插值中的使用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.3.2.</span> <span class="toc-text">输出数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="toc-number">3.3.3.</span> <span class="toc-text">列表渲染</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">3.3.4.</span> <span class="toc-text">条件渲染</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%B1%9E%E6%80%A7%E4%B8%8A%E4%BD%BF%E7%94%A8-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.4.</span> <span class="toc-text">在属性上使用 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSX-%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.4.1.</span> <span class="toc-text">JSX 使用注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9A%84%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E6%A8%A1%E5%BC%8F-create-react-app-%E8%84%9A%E6%89%8B%E6%9E%B6"><span class="toc-number">4.</span> <span class="toc-text">基于自动化的集成环境模式 - create-react-app - 脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">4.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-number">4.2.</span> <span class="toc-text">安装与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">4.2.1.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#npm"><span class="toc-number">4.2.1.0.1.</span> <span class="toc-text">npm</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#yarn"><span class="toc-number">4.2.1.0.2.</span> <span class="toc-text">yarn</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">4.2.2.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#npx"><span class="toc-number">4.2.2.0.1.</span> <span class="toc-text">npx</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E8%AF%B4%E6%98%8E"><span class="toc-number">4.3.</span> <span class="toc-text">项目目录结构说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%84%9A%E6%9C%AC"><span class="toc-number">4.4.</span> <span class="toc-text">命令脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#npm-start"><span class="toc-number">4.4.0.0.1.</span> <span class="toc-text">npm start</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#npm-test"><span class="toc-number">4.4.0.0.2.</span> <span class="toc-text">npm test</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#npm-run-build"><span class="toc-number">4.4.0.0.3.</span> <span class="toc-text">npm run build</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6"><span class="toc-number">5.1.</span> <span class="toc-text">函数式组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%BC%8F%E7%BB%84%E4%BB%B6"><span class="toc-number">5.2.</span> <span class="toc-text">类式组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E4%BB%8E%E5%AE%9E%E9%99%85%E6%A1%88%E4%BE%8B%E5%BC%80%E5%A7%8B%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%B1%E6%98%AF%E8%80%8D-LM"><span class="toc-number">6.</span> <span class="toc-text">不从实际案例开始的知识点就是耍 LM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-FriendList-%E7%BB%84%E4%BB%B6"><span class="toc-number">6.1.</span> <span class="toc-text">创建 FriendList 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E5%A4%8D%E7%94%A8-%E6%95%B0%E6%8D%AE%E6%8A%BD%E5%8F%96"><span class="toc-number">6.2.</span> <span class="toc-text">组件复用 - 数据抽取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#props-%E5%92%8C-state"><span class="toc-number">7.</span> <span class="toc-text">props 和 state</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#props-%E4%B8%8E-state-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">7.1.</span> <span class="toc-text">props 与 state 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">7.2.</span> <span class="toc-text">组件通信与数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="toc-number">7.3.</span> <span class="toc-text">React 中的事件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1"><span class="toc-number">8.</span> <span class="toc-text">React 组件间通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1-context"><span class="toc-number">8.1.</span> <span class="toc-text">跨组件通信 - context</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">9.</span> <span class="toc-text">组件的生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%BC%94%E5%8F%98"><span class="toc-number">9.1.</span> <span class="toc-text">生命周期演变</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%8B%E5%89%8D%EF%BC%88React-16-3-%E4%B9%8B%E5%89%8D%EF%BC%89"><span class="toc-number">9.1.1.</span> <span class="toc-text">之前（React 16.3 之前）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%B0%E5%9C%A8"><span class="toc-number">9.1.2.</span> <span class="toc-text">现在</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%9D%A5"><span class="toc-number">9.1.3.</span> <span class="toc-text">将来</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E8%AF%A6%E8%A7%A3"><span class="toc-number">9.2.</span> <span class="toc-text">生命周期函数详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#constructor-props"><span class="toc-number">9.2.1.</span> <span class="toc-text">constructor(props)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#render"><span class="toc-number">9.2.2.</span> <span class="toc-text">render()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#static-getDerivedStateFromProps-props-state"><span class="toc-number">9.2.3.</span> <span class="toc-text">static getDerivedStateFromProps(props, state)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentDidMount"><span class="toc-number">9.2.4.</span> <span class="toc-text">componentDidMount()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#shouldComponentUpdate-nextProps-nextState"><span class="toc-number">9.2.5.</span> <span class="toc-text">shouldComponentUpdate(nextProps, nextState)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getSnapshotBeforeUpdate-prevProps-prevState"><span class="toc-number">9.2.6.</span> <span class="toc-text">getSnapshotBeforeUpdate(prevProps, prevState)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentDidUpdate"><span class="toc-number">9.2.7.</span> <span class="toc-text">componentDidUpdate()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentWillUnmount"><span class="toc-number">9.2.8.</span> <span class="toc-text">componentWillUnmount()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">9.3.</span> <span class="toc-text">错误处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#static-getDerivedStateFromError"><span class="toc-number">9.3.1.</span> <span class="toc-text">static getDerivedStateFromError()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#componentDidCatch-%E5%B0%86%E6%9D%A5%E7%89%88%E6%9C%AC%E4%BC%9A%E6%9C%89%E5%8F%98%E5%8C%96"><span class="toc-number">9.3.2.</span> <span class="toc-text">componentDidCatch() &#x2F;&#x2F; 将来版本会有变化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95-PureComponent"><span class="toc-number">9.4.</span> <span class="toc-text">扩展 PureComponent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">受控组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%E7%9B%B8%E5%85%B3API"><span class="toc-number">11.</span> <span class="toc-text">React 相关API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PureComponent"><span class="toc-number">11.1.</span> <span class="toc-text">PureComponent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ref"><span class="toc-number">11.2.</span> <span class="toc-text">ref</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#children"><span class="toc-number">11.3.</span> <span class="toc-text">children</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dangerouslySetInnerHTML"><span class="toc-number">11.4.</span> <span class="toc-text">dangerouslySetInnerHTML</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98-todoList"><span class="toc-number">12.</span> <span class="toc-text">实战 - todoList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6-1"><span class="toc-number">13.</span> <span class="toc-text">函数式组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-hooks"><span class="toc-number">14.</span> <span class="toc-text">React hooks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-Hooks-%E4%BC%98%E5%8A%BF"><span class="toc-number">14.1.</span> <span class="toc-text">React Hooks 优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8-hook"><span class="toc-number">14.2.</span> <span class="toc-text">常用 hook</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hook-%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-number">14.3.</span> <span class="toc-text">Hook 使用规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6-2"><span class="toc-number">15.</span> <span class="toc-text">函数式组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-hooks-%E9%92%A9%E5%AD%90"><span class="toc-number">16.</span> <span class="toc-text">React hooks(钩子)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-Hooks-%E4%BC%98%E5%8A%BF-1"><span class="toc-number">16.1.</span> <span class="toc-text">React Hooks 优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8-hook-1"><span class="toc-number">16.2.</span> <span class="toc-text">常用 hook</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hook-%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99-1"><span class="toc-number">16.3.</span> <span class="toc-text">Hook 使用规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1"><span class="toc-number">17.</span> <span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1-1"><span class="toc-number">17.1.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPA"><span class="toc-number">17.2.</span> <span class="toc-text">SPA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPA-%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%88%87%E6%8D%A2%E6%9C%BA%E5%88%B6"><span class="toc-number">17.3.</span> <span class="toc-text">SPA 的页面切换机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1"><span class="toc-number">17.3.1.</span> <span class="toc-text">前端路由</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Router"><span class="toc-number">18.</span> <span class="toc-text">React Router</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E-Web-%E7%9A%84-React-Router"><span class="toc-number">18.1.</span> <span class="toc-text">基于 Web 的 React Router</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-1"><span class="toc-number">18.1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%A7%88"><span class="toc-number">18.1.2.</span> <span class="toc-text">概览</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">19.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">19.1.</span> <span class="toc-text">应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Router-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.1.1.</span> <span class="toc-text">Router 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#BrowserRouter-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.1.1.1.</span> <span class="toc-text">BrowserRouter 组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HashRouter-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.1.1.2.</span> <span class="toc-text">HashRouter 组件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Route-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.1.2.</span> <span class="toc-text">Route 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#exact"><span class="toc-number">19.1.2.1.</span> <span class="toc-text">exact</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Link-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.1.3.</span> <span class="toc-text">Link 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#to-%E5%B1%9E%E6%80%A7"><span class="toc-number">19.1.3.1.</span> <span class="toc-text">to 属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E9%80%92-props"><span class="toc-number">19.2.</span> <span class="toc-text">传递 props</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Route-render"><span class="toc-number">19.2.0.0.1.</span> <span class="toc-text">Route : render</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">19.2.1.</span> <span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NavLink-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.2.2.</span> <span class="toc-text">NavLink 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#activeStyle"><span class="toc-number">19.2.2.1.</span> <span class="toc-text">activeStyle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#activeClassName"><span class="toc-number">19.2.2.2.</span> <span class="toc-text">activeClassName</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#isActive"><span class="toc-number">19.2.2.3.</span> <span class="toc-text">isActive</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Switch-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.2.3.</span> <span class="toc-text">Switch 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Redirect-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.2.4.</span> <span class="toc-text">Redirect 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#to"><span class="toc-number">19.2.4.1.</span> <span class="toc-text">to</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#withRouter-%E7%BB%84%E4%BB%B6"><span class="toc-number">19.2.5.</span> <span class="toc-text">withRouter 组件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#react-%E5%AE%98%E7%BD%91"><span class="toc-number"></span> <span class="toc-text">react 官网</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1-2"><span class="toc-number">1.</span> <span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1-3"><span class="toc-number">1.1.</span> <span class="toc-text">路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPA-1"><span class="toc-number">1.2.</span> <span class="toc-text">SPA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPA-%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%88%87%E6%8D%A2%E6%9C%BA%E5%88%B6-1"><span class="toc-number">1.3.</span> <span class="toc-text">SPA 的页面切换机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">前端路由</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Router-1"><span class="toc-number">2.</span> <span class="toc-text">React Router</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E-Web-%E7%9A%84-React-Router-1"><span class="toc-number">2.1.</span> <span class="toc-text">基于 Web 的 React Router</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-2"><span class="toc-number">2.1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%A7%88-1"><span class="toc-number">2.1.2.</span> <span class="toc-text">概览</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80-1"><span class="toc-number">3.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Router-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.0.1.</span> <span class="toc-text">Router 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#BrowserRouter-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.0.1.1.</span> <span class="toc-text">BrowserRouter 组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HashRouter-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.0.1.2.</span> <span class="toc-text">HashRouter 组件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Route-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.0.2.</span> <span class="toc-text">Route 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#exact-1"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">exact</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Link-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.0.3.</span> <span class="toc-text">Link 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#to-%E5%B1%9E%E6%80%A7-1"><span class="toc-number">3.0.3.1.</span> <span class="toc-text">to 属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E9%80%92-props-1"><span class="toc-number">3.1.</span> <span class="toc-text">传递 props</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Route-render-1"><span class="toc-number">3.1.0.0.1.</span> <span class="toc-text">Route : render</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1-1"><span class="toc-number">3.1.1.</span> <span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NavLink-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.1.2.</span> <span class="toc-text">NavLink 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#activeStyle-1"><span class="toc-number">3.1.2.1.</span> <span class="toc-text">activeStyle</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#activeClassName-1"><span class="toc-number">3.1.2.2.</span> <span class="toc-text">activeClassName</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#isActive-1"><span class="toc-number">3.1.2.3.</span> <span class="toc-text">isActive</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Switch-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.1.3.</span> <span class="toc-text">Switch 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Redirect-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.1.4.</span> <span class="toc-text">Redirect 组件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#to-1"><span class="toc-number">3.1.4.1.</span> <span class="toc-text">to</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#withRouter-%E7%BB%84%E4%BB%B6-1"><span class="toc-number">3.1.5.</span> <span class="toc-text">withRouter 组件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hooks-router5%E4%B9%8B%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">hooks (router5之后)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#redux"><span class="toc-number"></span> <span class="toc-text">redux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-redux"><span class="toc-number">1.</span> <span class="toc-text">为什么使用 redux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#state-%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.1.</span> <span class="toc-text">state 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#state-%E6%98%AF%E5%8F%AA%E8%AF%BB%E7%9A%84"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">state 是只读的</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%BA%AF%E5%87%BD%E6%95%B0%E4%BF%AE%E6%94%B9-state"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">通过纯函数修改 state</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BA%AF%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">纯函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#action-%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">action 对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Store-%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.3.</span> <span class="toc-text">Store 对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redux-%E4%B8%89%E5%A4%A7%E5%8E%9F%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">redux 三大原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redux-API"><span class="toc-number">3.</span> <span class="toc-text">redux API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react-redux"><span class="toc-number">4.</span> <span class="toc-text">react-redux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">异步操作中间件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E4%B8%8B-reducer-%E7%9A%84%E6%8B%86%E5%88%86"><span class="toc-number">6.</span> <span class="toc-text">复杂数据下 reducer 的拆分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react-redux-hooks"><span class="toc-number">7.</span> <span class="toc-text">react-redux hooks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#redux-%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-number">7.1.</span> <span class="toc-text">redux 中间件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84-React-%E9%A1%B9%E7%9B%AE-CNode"><span class="toc-number">8.</span> <span class="toc-text">搭建自己的 React 项目 - CNode</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#antd-%E4%BD%BF%E7%94%A8"><span class="toc-number">8.1.</span> <span class="toc-text">antd 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-antd"><span class="toc-number">8.1.1.</span> <span class="toc-text">安装 antd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE-%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD-antd-%E7%9A%84%E6%A0%B7%E5%BC%8F"><span class="toc-number">8.1.2.</span> <span class="toc-text">高级配置 - (按需加载 antd 的样式)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#react-app-rewired-%E4%B8%80%E4%B8%AA%E5%AF%B9-create-react-app-%E8%BF%9B%E8%A1%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE%E7%9A%84%E7%A4%BE%E5%8C%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">8.1.2.1.</span> <span class="toc-text">react-app-rewired (一个对 create-react-app 进行自定义配置的社区解决方案)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E5%88%B6%E4%B8%BB%E9%A2%98"><span class="toc-number">8.2.</span> <span class="toc-text">定制主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA-CNode"><span class="toc-number">8.3.</span> <span class="toc-text">开始搭建 CNode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E4%BA%8B%E4%BB%B6"><span class="toc-number">9.</span> <span class="toc-text">移动端事件</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/24/es11/" class="archive-article-date">
-  	<time datetime="2021-03-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/24/es11/">es11</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/es11//" class="article-tag-list-link color5">es11</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/22/node2/" class="archive-article-date">
-  	<time datetime="2021-03-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-22</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/22/node2/">node2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/21/node1/" class="archive-article-date">
-  	<time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/21/node1/">node1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/node//" class="article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/16/%E4%BA%A4%E4%BA%9201/" class="archive-article-date">
-  	<time datetime="2021-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/16/%E4%BA%A4%E4%BA%9201/">ajax01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ajax01//" class="article-tag-list-link color2">ajax01</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/16/%E4%BA%A4%E4%BA%9202/" class="archive-article-date">
-  	<time datetime="2021-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/16/%E4%BA%A4%E4%BA%9202/">ajax02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ajax02//" class="article-tag-list-link color2">ajax02</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/09/%E4%BA%A4%E4%BA%92/" class="archive-article-date">
-  	<time datetime="2021-03-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/09/%E4%BA%A4%E4%BA%92/">ajax</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/ajax//" class="article-tag-list-link color5">ajax</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2021-03-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/正则表达式//" class="article-tag-list-link color1">正则表达式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -578,8 +938,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
